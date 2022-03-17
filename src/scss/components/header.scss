@@ -1,0 +1,57 @@
+.top-bar {
+    width: 100%;
+    height: 6px;
+    background-color: $main-violet;
+}
+
+.navbar {
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9em;
+}
+
+.navbar-link {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: $black;
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: $main-violet;
+        border-radius: 1px;
+        position: absolute;
+        bottom: -6px;
+        opacity: 0;
+        transform: translateY(5px);
+        transition: all 0.4s;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    img {
+        width: 90px;
+    }
+
+    p {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.92rem;
+        color: $black;
+    }
+}

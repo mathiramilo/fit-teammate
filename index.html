@@ -11,7 +11,123 @@
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-    
+    <!-- Main Section (100 vh) -->
+    <section class="main-section">
+        <header class="header">
+            <!-- Violet Bar at top of the page -->
+            <div class="top-bar"></div>
+
+            <!-- Navbar -->
+            <section class="navbar">
+                <a href="./index.html" class="navbar-link">Home</a>
+                <a href="./pages/my-data.html" class="navbar-link">My Data</a>
+                <a href="./index.html" class="logo">
+                    <img src="./assets/images/logo/fit.png" alt="Fit Logo">
+                    <p>Teammate</p>
+                </a>
+                <a href="./pages/routine.html" class="navbar-link">Routine</a>
+                <a href="./pages/shop-home.html" class="navbar-link">Shop</a>
+            </section>
+        </header>
+
+        <!-- Section Grid contains 3 Cards -->
+        <section class="cards-sections">
+            <!-- Custom Routine Card -->
+            <section class="secondary-card routine-card">
+                <div class="routine-card-title">
+                    <picture>
+                        <source srcset="./assets/images/images/routine-logo.webp" type="image/webp">
+                        <img src="./assets/images/images/routine-logo.png" alt="Woman Training">
+                    </picture>
+                    <h2>Custom Routine</h2>
+                </div>
+                <p class="routine-card-description">Fill out a short form to get your free personalized routine and diet</p>
+                <hr>
+                <h3>Recomended:</h3>
+                <div class="recomended-list">
+                    <p>1. Standard Routine</p>
+                    <p>2. Regular Diet</p>
+                </div>
+                <a href="./pages/routine.html" class="button routine-button">Get My Routine</a>
+            </section>
+
+            <!-- My Data Card -->
+            <section class="data-card">
+                <div class="data-card-title">
+                    <picture>
+                        <source srcset="./assets/images/images/running-person.webp" type="image/webp">
+                        <img src="./assets/images/images/running-person.png" alt="Running Person">
+                    </picture>
+                    <div>
+                        <h1>Mathias Ramilo</h1>
+                        <h3>Age <span>21</span></h3>
+                    </div>
+                </div>
+                <div class="data-card-info">
+                    <p>Height: <span>1.83 kg</span></p>
+                    <p>Weight: <span>79.2 kg</span></p>
+                </div>
+                <hr>
+                <div class="data-card-bmi">
+                    <h2>Body Mass Index (BMI):</h2>
+                    <h3><span>23.6</span> Normal</h3>
+                </div>
+                <a href="./pages/my-data.html" class="button data-button">View All Data</a>
+            </section>
+
+            <!-- Shop Card -->
+            <section class="secondary-card shop-card">
+                <div class="shop-card-title">
+                    <picture>
+                        <source srcset="./assets/images/images/shop-logo.webp" type="image/webp">
+                        <img src="./assets/images/images/shop-logo.png" alt="Supplements & Equipment">
+                    </picture>
+                    <h2>Fitness Shop</h2>
+                </div>
+                <p class="shop-card-description">In the shop you can find a wide variety of products, among them are fitness equipment and supplements</p>
+                <div class="shop-card-options">
+                    <div class="shop-card-option equipment-option">
+                        <picture class="equipment-image">
+                            <source srcset="./assets/images/images/equipment-logo.webp" type="image/webp">
+                            <img src="./assets/images/images/equipment-logo.png" alt="Dumbells">
+                        </picture>
+                        <h3>Equipment</h3>
+                    </div>
+                    <div class="shop-card-option supplements-option">
+                        <picture class="supplements-image">
+                            <source srcset="./assets/images/images/supplements-logo.webp" type="image/webp">
+                            <img src="./assets/images/images/supplements-logo.png" alt="Whey Protein">
+                        </picture>
+                        <h3>Supplements</h3>
+                    </div>
+                </div>
+                <a href="./pages/shop-home.html" class="button shop-button">Go To Shop</a>
+            </section>
+        </section>
+    </section>
+
+    <footer class="footer">
+        <!-- Navbar -->
+        <section class="navbar footer-navbar">
+            <a href="./index.html" class="navbar-link">Home</a>
+            <a href="./pages/my-data.html" class="navbar-link">My Data</a>
+            <a href="./index.html" class="logo">
+                <img src="./assets/images/logo/fit.png" alt="Fit Logo">
+                <p>Teammate</p>
+            </a>
+            <a href="./pages/routine.html" class="navbar-link">Routine</a>
+            <a href="./pages/shop-home.html" class="navbar-link">Shop</a>
+        </section>
+
+        <p class="registered-trademark">© 2021 Fit Teammate</p>
+
+        <div class="developed-by">
+            <p>Developed by Mathias Ramilo</p>
+            <a target="_blank" href="https://github.com/mathiramilo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg></a>
+        </div>
+    </footer>
 
     <script src="./src/js/app.js"></script>
 </body>

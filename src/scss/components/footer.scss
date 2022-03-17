@@ -1,0 +1,54 @@
+.footer {
+    background-color: #080808;
+    padding-top: 1em;
+    padding-bottom: 0.2em;
+}
+
+.footer-navbar {
+    margin-bottom: 1em;
+
+    .navbar-link {
+        color: $white;
+    }
+
+    .logo {
+        p {
+            color: $white;
+        }
+    }
+}
+
+.registered-trademark {
+    color: #ffffff80;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 1.2em;
+}
+
+.developed-by {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+
+    p {
+        color: #ffffff80;
+        font-size: 0.6rem;
+        font-weight: 200;
+    }
+
+    a {
+        margin-top: -5px;
+
+        svg {
+            width: 14px;
+            fill: #ffffff80;
+            transition: all 0.3s;
+
+            &:hover {
+                fill: $main-violet;
+            }
+        }
+    }
+}
