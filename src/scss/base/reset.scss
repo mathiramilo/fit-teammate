@@ -59,3 +59,14 @@ input[type=file]:hover,
 select:hover {
     cursor: pointer;
 }
+
+// Scrollbar Customization
+*::-webkit-scrollbar {
+    width: 5px;
+    background-color: $white;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #00000075;
+    border-radius: 20px;
+}
