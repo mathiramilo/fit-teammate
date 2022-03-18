@@ -174,6 +174,8 @@ img {
   .themes button {
     border: none;
     background-color: transparent; }
+    .themes button:hover {
+      cursor: pointer; }
   .themes .bright-mode svg {
     fill: #262461; }
   .themes .dark-mode svg {
@@ -319,7 +321,7 @@ img {
     font-size: 1.4rem;
     font-weight: 500;
     text-align: center; }
-    .data-card-bmi h3 span {
+    .data-card-bmi h3 .user-bmi {
       color: #4FD174;
       font-size: 2.8rem;
       font-weight: 700;
@@ -387,17 +389,30 @@ img {
   background-color: #00000085;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transition: all 0.5s ease; }
 
 .init-data-modal {
   display: grid;
   width: 80%;
+  max-width: 1200px;
   height: 80vh;
   grid-template-columns: 35% 65%;
   border-radius: 8px;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: transform 0.5s;
+  animation: appearFromTop 0.5s ease; }
   .init-data-modal::-webkit-scrollbar {
     display: none; }
+
+@keyframes appearFromTop {
+  0% {
+    transform: translateY(-50vh);
+    opacity: 0; } }
+
+@keyframes disappearToTop {
+  100% {
+    transform: translateY(-100vh); } }
 
 .init-data-modal-image {
   background-image: url(../../assets/images/images/modal-main.webp);
@@ -429,6 +444,14 @@ img {
     font-weight: 300;
     margin-bottom: 2em; }
 
+@keyframes alert {
+  25% {
+    transform: translateX(5px); }
+  50% {
+    transform: translateX(0); }
+  75% {
+    transform: translateX(3px); } }
+
 .fields-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -439,7 +462,8 @@ img {
 .field {
   display: flex;
   flex-direction: column;
-  gap: 0.4em; }
+  gap: 0.4em;
+  position: relative; }
   .field:focus-within label {
     color: #262461; }
   .field label {
@@ -458,6 +482,18 @@ img {
       outline: none; }
   .field input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none; }
+  .field p {
+    position: absolute;
+    bottom: -44px;
+    right: 5px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #EC1E11;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease; }
+    .field p span {
+      font-size: 0.6rem; }
 
 .submit-button {
   border: none;
@@ -467,6 +503,8 @@ img {
   margin: auto;
   width: 200px;
   margin-bottom: 0.4em; }
+  .submit-button:hover {
+    cursor: pointer; }
 
 @media (max-width: 1048px) {
   .init-data-modal-image {

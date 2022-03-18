@@ -23,19 +23,22 @@
             <div class="init-data-modal-main">
                 <h2>Enter Your Data</h2>
                 <form action="" method="POST" class="init-data-modal-form">
-                    <p>Fill all fields *</p>
+                    <p id="fill-all-fields">Fill all fields *</p>
                     <div class="fields-grid">
                         <div class="field">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" autocomplete="off">
+                            <p id="name-alert">Invalid Name <span>(letters only)</span> *</p>
                         </div>
                         <div class="field">
                             <label for="lastname">Lastname</label>
                             <input type="text" id="lastname" name="lastname" autocomplete="off">
+                            <p id="lastname-alert">Invalid Lastname <span>(letters only)</span> *</p>
                         </div>
                         <div class="field">
                             <label for="age">Age</label>
                             <input type="number" id="age" name="age" autocomplete="off">
+                            <p id="age-alert">Invalid Age <span>(5 - 120)</span> *</p>
                         </div>
                         <div class="field">
                             <label for="gender">Gender</label>
@@ -48,10 +51,12 @@
                         <div class="field">
                             <label for="height">Height <span>(cm)</span></label>
                             <input type="number" id="height" name="height" autocomplete="off">
+                            <p id="height-alert">Invalid Height <span>(50 - 250)</span> *</p>
                         </div>
                         <div class="field">
                             <label for="weight">Weight <span>(kg)</span></label>
                             <input type="number" id="weight" name="weight" autocomplete="off">
+                            <p id="weight-alert">Invalid Weight <span>(10 - 200)</span> *</p>
                         </div>
                     </div>
 
@@ -96,7 +101,7 @@
                 <p class="routine-card-description">Fill out a short form to get your free personalized routine and diet</p>
                 <hr>
                 <h3>Recomended:</h3>
-                <div class="recomended-list">
+                <div id="recomended-list" class="recomended-list">
                     <p>1. Standard Routine</p>
                     <p>2. Regular Diet</p>
                 </div>
@@ -111,18 +116,18 @@
                         <img src="./assets/images/images/running-person.png" alt="Running Person">
                     </picture>
                     <div>
-                        <h1>Mathias Ramilo</h1>
-                        <h3>Age <span>21</span></h3>
+                        <h1 id="user-name">Mathias Ramilo</h1>
+                        <h3>Age <span id="user-age">21</span></h3>
                     </div>
                 </div>
                 <div class="data-card-info">
-                    <p>Height: <span>1.83 kg</span></p>
-                    <p>Weight: <span>79.2 kg</span></p>
+                    <p>Height: <span id="user-height">1.83 m</span></p>
+                    <p>Weight: <span id="user-weight">79.2 kg</span></p>
                 </div>
                 <hr>
                 <div class="data-card-bmi">
                     <h2>Body Mass Index (BMI):</h2>
-                    <h3><span>23.6</span> Normal</h3>
+                    <h3><span class="user-bmi" id="user-bmi">23.6</span> <span class="bmi-level" id="bmi-level">Normal</span></h3>
                 </div>
                 <a href="./pages/my-data.html" class="button data-button">View All Data</a>
             </section>

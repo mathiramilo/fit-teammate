@@ -171,7 +171,7 @@
         font-weight: 500;
         text-align: center;
 
-        span {
+        .user-bmi {
             color: $green;
             font-size: 2.8rem;
             font-weight: 700;
@@ -269,18 +269,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s ease;
 }
 
 .init-data-modal {
     display: grid;
     width: 80%;
+    max-width: 1200px;
     height: 80vh;
     grid-template-columns: 35% 65%;
     border-radius: 8px;
     overflow: hidden;
+    transition: transform 0.5s;
+    animation: appearFromTop 0.5s ease;
 
     &::-webkit-scrollbar {
         display: none;
+    }
+}
+
+@keyframes appearFromTop {
+    0% {
+        transform: translateY(-50vh);
+        opacity: 0;
+    }
+}
+
+@keyframes disappearToTop {
+    100% {
+        transform: translateY(-100vh);
     }
 }
 
@@ -325,6 +342,20 @@
     }
 }
 
+@keyframes alert {
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(3px);
+    }
+}
+
 .fields-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -337,6 +368,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.4em;
+    position: relative;
 
     &:focus-within label {
         color: $main-violet;
@@ -367,6 +399,22 @@
     input[type=number]::-webkit-inner-spin-button { 
         -webkit-appearance: none; 
     }
+
+    p {
+        position: absolute;
+        bottom: -44px;
+        right: 5px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: $red;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+
+        span {
+            font-size: 0.6rem;
+        }
+    }
 }
 
 .submit-button {
@@ -377,6 +425,10 @@
     margin: auto;
     width: 200px;
     margin-bottom: 0.4em;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 @media (max-width: 1048px) {
