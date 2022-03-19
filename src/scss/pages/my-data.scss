@@ -11,6 +11,7 @@
     border-radius: 0;
     padding-top: 0;
     border-right: 2px solid #e6e6e6;
+    transition: all 0.3s;
 
     h1, h3, p {
         color: $black;
@@ -54,6 +55,7 @@
         width: 78%;
         margin-left: 1em;
         background-color: #e6e6e6;
+        transition: all 0.3s;
     }
 }
 
@@ -111,6 +113,11 @@
         margin-bottom: 0.6em;
         font-weight: 500;
     }
+}
+
+.change-data-modal {
+    opacity: 0;
+    pointer-events: none;
 }
 
 @media (max-width: 1200px) {

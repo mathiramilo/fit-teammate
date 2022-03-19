@@ -333,6 +333,16 @@ function darkMode() {
     
     const menuIcon = document.querySelector('.menu-icon');
     menuIcon.style.fill = "#ffffff";
+
+    if (!!document.querySelector('.my-data-hr')) {
+        const myDataHr = document.querySelector('.my-data-hr');
+        myDataHr.style.backgroundColor = "#2D2D2D";
+    }
+
+    if (!!document.querySelector('.my-data')) {
+        const myData = document.querySelector('.my-data');
+        myData.style.borderColor = "#666666";
+    }
 }
 
 // Function Bright Mode
@@ -404,4 +414,14 @@ function brightMode() {
     
     const menuIcon = document.querySelector('.menu-icon');
     menuIcon.style.fill = "#0A0A0A";
+
+    if (!!document.querySelector('.my-data-hr')) {
+        const myDataHr = document.querySelector('.my-data-hr');
+        myDataHr.style.backgroundColor = "#e6e6e6";
+    }
+
+    if (!!document.querySelector('.my-data')) {
+        const myData = document.querySelector('.my-data');
+        myData.style.borderColor = "#e6e6e6";
+    }
 }

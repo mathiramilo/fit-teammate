@@ -466,9 +466,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s ease;
-  opacity: 0;
-  pointer-events: none; }
+  transition: all 0.5s ease; }
 
 .init-data-modal {
   display: grid;
@@ -543,7 +541,7 @@ button:hover {
   gap: 0.4em;
   position: relative; }
   .field:focus-within label {
-    color: #262461; }
+    color: #4541CA; }
   .field label {
     font-size: 1.3rem;
     font-weight: 500;
@@ -610,7 +608,8 @@ button:hover {
   box-shadow: none;
   border-radius: 0;
   padding-top: 0;
-  border-right: 2px solid #e6e6e6; }
+  border-right: 2px solid #e6e6e6;
+  transition: all 0.3s; }
   .my-data h1, .my-data h3, .my-data p {
     color: #161616; }
   .my-data .my-data-username, .my-data .my-data-age {
@@ -633,7 +632,8 @@ button:hover {
   .my-data hr {
     width: 78%;
     margin-left: 1em;
-    background-color: #e6e6e6; }
+    background-color: #e6e6e6;
+    transition: all 0.3s; }
 
 .change-data-button {
   background-color: #262461;
@@ -673,6 +673,10 @@ button:hover {
   .bmi-recomendations-list p {
     margin-bottom: 0.6em;
     font-weight: 500; }
+
+.change-data-modal {
+  opacity: 0;
+  pointer-events: none; }
 
 @media (max-width: 1200px) {
   .bmi-recomendations .data-card-bmi h3 {
