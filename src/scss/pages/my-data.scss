@@ -1,0 +1,173 @@
+.my-data-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+    margin: 5.5em auto;
+}
+
+.my-data {
+    background-image: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding-top: 0;
+    border-right: 2px solid #e6e6e6;
+
+    h1, h3, p {
+        color: $black;
+    } 
+
+    .my-data-username, .my-data-age {
+        color: $black;
+    }
+    
+    .my-data-username {
+        font-weight: 700;
+    }
+    
+    .my-data-age {
+        font-weight: 500;
+    }
+    
+    .user-gender {
+        color: $blue;
+        font-weight: 500;
+    }
+    
+    .user-height, .user-weight {
+        font-weight: 500;
+    }
+    
+    .data-card-info-my-data {
+        margin-left: 0.5em;
+    
+        p {
+            font-weight: 600;
+
+            // Gender 
+            &:first-child {
+                margin-bottom: 2em;
+            }
+        }
+    }
+
+    hr {
+        width: 78%;
+        margin-left: 1em;
+        background-color: #e6e6e6;
+    }
+}
+
+.change-data-button {
+    background-color: $main-violet;
+    color: $white;
+    border: none;
+    max-width: 240px;
+    margin-left: 1.8em;
+}
+
+// BMI Recomendations
+.bmi-recomendations {
+    padding-left: 3em;
+    padding-top: 0.5em;
+    padding-right: 2em;
+
+    .data-card-bmi {
+        h2 {
+            color: $black;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: $black;
+            text-align: left;
+            margin-left: 4em;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        margin-left: 1em;
+    }
+}
+
+.my-data-recomendations {
+    margin-top: 2.4em;
+    margin-left: 0.6em;
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $main-violet;
+        margin-bottom: 1em;
+    }
+}
+
+.bmi-recomendations-list {
+    margin-left: 0.8em;
+    margin-top: 1em;
+
+    p {
+        margin-bottom: 0.6em;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 1200px) {
+    .bmi-recomendations {
+        .data-card-bmi {
+            h3 {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 972px) {
+    .bmi-recomendations {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 824px) {
+    .main-section-my-data {
+        height: auto;
+    }
+
+    .themes-my-data {
+        position: fixed;
+    }
+
+    .my-data-section {
+        grid-template-columns: 100%;
+        margin-top: 3em;
+    }
+
+    .my-data {
+        border-right: none;
+        margin-bottom: 2em;
+    }
+
+    .bmi-recomendations {
+        padding-left: 1em;
+        padding-top: 0.5em;
+        padding-right: 2em;
+    
+        .data-card-bmi {
+            h2 {
+                color: $black;
+                font-weight: 600;
+            }
+    
+            h3 {
+                color: $black;
+                text-align: center;
+            }
+        }
+    
+        p {
+            font-size: 1rem;
+            margin-left: 0.5em;
+        }
+    }
+}

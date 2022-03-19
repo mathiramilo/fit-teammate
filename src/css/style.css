@@ -68,6 +68,9 @@ a {
 img {
   max-width: 100%; }
 
+button:hover {
+  cursor: pointer; }
+
 .button {
   text-transform: uppercase;
   font-weight: 500;
@@ -126,6 +129,63 @@ img {
     font-size: 0.92rem;
     color: #161616;
     transition: all 0.3s ease; }
+
+.menu-button {
+  border: none;
+  background-color: transparent;
+  display: none; }
+  .menu-button:active svg {
+    fill: #aaaaaa; }
+  .menu-button svg {
+    fill: #0A0A0A;
+    width: 48px;
+    transition: all 0.3s; }
+
+.navbar-modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  background-color: rgba(10, 10, 10, 0.959);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s; }
+  .navbar-modal .x-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none; }
+    .navbar-modal .x-button:hover svg {
+      fill: #ffffffd2; }
+    .navbar-modal .x-button svg {
+      width: 48px;
+      fill: #ffffff98;
+      transition: all 0.3s; }
+  .navbar-modal .navbar-link {
+    color: #FFFFFF;
+    font-size: 1.6rem; }
+
+@media (max-width: 824px) {
+  .menu-button {
+    display: block; }
+  .navbar-link {
+    display: none; }
+  .footer-navbar-link {
+    display: block; }
+  .footer-navbar {
+    flex-direction: column;
+    gap: 1.5em; }
+    .footer-navbar .logo {
+      order: -1;
+      margin-bottom: 0.4em; }
+  .navbar {
+    justify-content: space-between; } }
 
 .footer {
   background-color: #080808;
@@ -538,3 +598,111 @@ img {
     overflow-y: scroll; }
   .init-data-modal-main {
     padding: 1.5em 1em; } }
+
+.my-data-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1200px;
+  margin: 5.5em auto; }
+
+.my-data {
+  background-image: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding-top: 0;
+  border-right: 2px solid #e6e6e6; }
+  .my-data h1, .my-data h3, .my-data p {
+    color: #161616; }
+  .my-data .my-data-username, .my-data .my-data-age {
+    color: #161616; }
+  .my-data .my-data-username {
+    font-weight: 700; }
+  .my-data .my-data-age {
+    font-weight: 500; }
+  .my-data .user-gender {
+    color: #1C9CD2;
+    font-weight: 500; }
+  .my-data .user-height, .my-data .user-weight {
+    font-weight: 500; }
+  .my-data .data-card-info-my-data {
+    margin-left: 0.5em; }
+    .my-data .data-card-info-my-data p {
+      font-weight: 600; }
+      .my-data .data-card-info-my-data p:first-child {
+        margin-bottom: 2em; }
+  .my-data hr {
+    width: 78%;
+    margin-left: 1em;
+    background-color: #e6e6e6; }
+
+.change-data-button {
+  background-color: #262461;
+  color: #FFFFFF;
+  border: none;
+  max-width: 240px;
+  margin-left: 1.8em; }
+
+.bmi-recomendations {
+  padding-left: 3em;
+  padding-top: 0.5em;
+  padding-right: 2em; }
+  .bmi-recomendations .data-card-bmi h2 {
+    color: #161616;
+    font-weight: 600; }
+  .bmi-recomendations .data-card-bmi h3 {
+    color: #161616;
+    text-align: left;
+    margin-left: 4em; }
+  .bmi-recomendations p {
+    font-size: 1rem;
+    margin-left: 1em; }
+
+.my-data-recomendations {
+  margin-top: 2.4em;
+  margin-left: 0.6em; }
+  .my-data-recomendations h3 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #262461;
+    margin-bottom: 1em; }
+
+.bmi-recomendations-list {
+  margin-left: 0.8em;
+  margin-top: 1em; }
+  .bmi-recomendations-list p {
+    margin-bottom: 0.6em;
+    font-weight: 500; }
+
+@media (max-width: 1200px) {
+  .bmi-recomendations .data-card-bmi h3 {
+    margin-left: 0; } }
+
+@media (max-width: 972px) {
+  .bmi-recomendations {
+    padding-top: 0; } }
+
+@media (max-width: 824px) {
+  .main-section-my-data {
+    height: auto; }
+  .themes-my-data {
+    position: fixed; }
+  .my-data-section {
+    grid-template-columns: 100%;
+    margin-top: 3em; }
+  .my-data {
+    border-right: none;
+    margin-bottom: 2em; }
+  .bmi-recomendations {
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-right: 2em; }
+    .bmi-recomendations .data-card-bmi h2 {
+      color: #161616;
+      font-weight: 600; }
+    .bmi-recomendations .data-card-bmi h3 {
+      color: #161616;
+      text-align: center; }
+    .bmi-recomendations p {
+      font-size: 1rem;
+      margin-left: 0.5em; } }

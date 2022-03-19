@@ -156,6 +156,15 @@ initialDataSubmit.addEventListener('click', () => {
 });
 
 
+// Show the menu modal
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', showMenu);
+
+// Close the menu modal
+const xButton = document.querySelector('.x-button');
+xButton.addEventListener('click', closeMenu);
+
+
 // Initialize the variable theme as "bright"
 let theme = "bright";
 
@@ -182,6 +191,7 @@ function onlyLetters(str) {
 function bmiCalculator(weight, height) {
     return (weight / (Math.pow((height / 100), 2))).toFixed(1);
 }
+
 
 // Function that prints in the home DOM the user data
 function showUserDataHome() {
@@ -239,6 +249,27 @@ function showUserDataHome() {
     }
 }
 
+
+// Function thats show the menu modal
+function showMenu() {
+    const navbarModal = document.querySelector('.navbar-modal');
+    navbarModal.style.opacity = 1;
+    navbarModal.style.pointerEvents = "all";
+
+    const linksModal = document.querySelectorAll('.navbar-link-modal');
+    linksModal.forEach(function(element) {
+        element.style.display = "block";
+    });
+}
+
+// Function that closes the menu modal
+function closeMenu() {
+    const navbarModal = document.querySelector('.navbar-modal');
+    navbarModal.style.opacity = 0;
+    navbarModal.style.pointerEvents = "none";
+}
+
+
 // Function Dark Mode
 function darkMode() {
     theme = "dark";
@@ -262,33 +293,46 @@ function darkMode() {
     const logoText = document.getElementById('logo-text');
     logoText.style.color = "#F8F8F8";
 
-    const secondaryCards = document.querySelectorAll('.secondary-card');
-    secondaryCards.forEach(function(element) {
-        element.style.backgroundColor = "#121212";
-    });
-
+    if (!!document.querySelectorAll('.secondary-card')) {
+        const secondaryCards = document.querySelectorAll('.secondary-card');
+        secondaryCards.forEach(function(element) {
+            element.style.backgroundColor = "#121212";
+        });
+    }
+    
     const cardLetters = document.querySelectorAll('.card-letters');
     cardLetters.forEach(function(element) {
-        element.style.color = "#ffffff";
+        element.style.color = "#eeeeee";
     });
 
-    const routineButton = document.querySelector('.routine-button');
-    const shopButton = document.querySelector('.shop-button');
-    routineButton.style.backgroundColor = "#EEEEEE";
-    routineButton.style.color = "#0B0B0B";
-    shopButton.style.backgroundColor = "#EEEEEE";
-    shopButton.style.color = "#0B0B0B";
+    if (!!document.querySelector('.routine-button') && !!document.querySelector('.shop-button')) {
+        const routineButton = document.querySelector('.routine-button');
+        const shopButton = document.querySelector('.shop-button');
+        routineButton.style.backgroundColor = "#EEEEEE";
+        routineButton.style.color = "#0B0B0B";
+        shopButton.style.backgroundColor = "#EEEEEE";
+        shopButton.style.color = "#0B0B0B";
+    }
 
-    const recomendedList = document.querySelector('#recomended-list');
-    recomendedList.classList.add('recomended-list-darkmode');
-
-    const shopCardOption = document.querySelectorAll('.shop-card-option');
-    shopCardOption.forEach(function(element) {
-        element.classList.add('shop-card-option-darkmode');
-    });
-
-    const routineHr = document.getElementById('routine-card-hr');
-    routineHr.style.backgroundColor = "#3F3F3F";
+    if (!!document.querySelector('#recomended-list')) {
+        const recomendedList = document.querySelector('#recomended-list');
+        recomendedList.classList.add('recomended-list-darkmode');
+    }
+    
+    if (!!document.querySelectorAll('.shop-card-option')) {
+        const shopCardOption = document.querySelectorAll('.shop-card-option');
+        shopCardOption.forEach(function(element) {
+            element.classList.add('shop-card-option-darkmode');
+        });
+    }
+    
+    if (!!document.getElementById('routine-card-hr')) {
+        const routineHr = document.getElementById('routine-card-hr');
+        routineHr.style.backgroundColor = "#3F3F3F";
+    }
+    
+    const menuIcon = document.querySelector('.menu-icon');
+    menuIcon.style.fill = "#ffffff";
 }
 
 // Function Bright Mode
@@ -311,6 +355,16 @@ function brightMode() {
         element.style.color = "#161616";
     });
 
+    const navbarLinksFooter = document.querySelectorAll('.footer-navbar-link');
+    navbarLinksFooter.forEach(function(element) {
+        element.style.color = "#F8F8F8";
+    });
+
+    const navbarLinksModal = document.querySelectorAll('.navbar-link-modal');
+    navbarLinksModal.forEach(function(element) {
+        element.style.color = "#F8F8F8";
+    });
+
     const logoText = document.getElementById('logo-text');
     logoText.style.color = "#161616";
 
@@ -324,21 +378,30 @@ function brightMode() {
         element.style.color = "#161616";
     });
 
-    const routineButton = document.querySelector('.routine-button');
-    const shopButton = document.querySelector('.shop-button');
-    routineButton.style.backgroundColor = "#161616";
-    routineButton.style.color = "#FFFFFF";
-    shopButton.style.backgroundColor = "#161616";
-    shopButton.style.color = "#FFFFFF";
-
-    const recomendedList = document.querySelector('#recomended-list');
-    recomendedList.classList.remove('recomended-list-darkmode');
-
+    if (!!document.querySelector('.routine-button') && !!document.querySelector('.shop-button')) {
+        const routineButton = document.querySelector('.routine-button');
+        const shopButton = document.querySelector('.shop-button');
+        routineButton.style.backgroundColor = "#161616";
+        routineButton.style.color = "#FFFFFF";
+        shopButton.style.backgroundColor = "#161616";
+        shopButton.style.color = "#FFFFFF";
+    }
+    
+    if (!!document.querySelector('#recomended-list')) {
+        const recomendedList = document.querySelector('#recomended-list');
+        recomendedList.classList.remove('recomended-list-darkmode');
+    }
+    
     const shopCardOption = document.querySelectorAll('.shop-card-option');
     shopCardOption.forEach(function(element) {
         element.classList.remove('shop-card-option-darkmode');
     });
 
-    const routineHr = document.getElementById('routine-card-hr');
-    routineHr.style.backgroundColor = "#CDCDCD";
+    if (!!document.getElementById('routine-card-hr')) {
+        const routineHr = document.getElementById('routine-card-hr');
+        routineHr.style.backgroundColor = "#CDCDCD";
+    }
+    
+    const menuIcon = document.querySelector('.menu-icon');
+    menuIcon.style.fill = "#0A0A0A";
 }

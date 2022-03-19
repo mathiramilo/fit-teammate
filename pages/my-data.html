@@ -11,8 +11,179 @@
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    
+    <!-- Modal Change Data -->
+    <section class="init-data-modal-container">
+        <section class="init-data-modal">
+            <div class="init-data-modal-image">
+                <div class="logo">
+                    <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                    <p>Teammate</p>
+                </div>
+            </div>
+            <div class="init-data-modal-main">
+                <h2>Enter Your Data</h2>
+                <form action="" method="POST" class="init-data-modal-form">
+                    <p id="fill-all-fields">Fill all fields *</p>
+                    <div class="fields-grid">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" autocomplete="off">
+                            <p id="name-alert">Invalid Name <span>(letters only)</span> *</p>
+                        </div>
+                        <div class="field">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" id="lastname" name="lastname" autocomplete="off">
+                            <p id="lastname-alert">Invalid Lastname <span>(letters only)</span> *</p>
+                        </div>
+                        <div class="field">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" autocomplete="off">
+                            <p id="age-alert">Invalid Age <span>(5 - 120)</span> *</p>
+                        </div>
+                        <div class="field">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="" selected disabled></option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="height">Height <span>(cm)</span></label>
+                            <input type="number" id="height" name="height" autocomplete="off">
+                            <p id="height-alert">Invalid Height <span>(50 - 250)</span> *</p>
+                        </div>
+                        <div class="field">
+                            <label for="weight">Weight <span>(kg)</span></label>
+                            <input type="number" id="weight" name="weight" autocomplete="off">
+                            <p id="weight-alert">Invalid Weight <span>(10 - 200)</span> *</p>
+                        </div>
+                    </div>
 
+                    <input id="initial-data-submit" type="button" value="Save Changes" class="button submit-button">
+                </form>
+
+                <p class="registered-trademark">© 2021 Fit Teammate</p>
+            </div>
+        </section>
+    </section>
+
+    <!-- Mobile NavBar Modal -->
+    <section class="navbar-modal">
+        <button class="x-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+
+        <a href="../index.html" class="navbar-link navbar-link-modal">Home</a>
+        <a href="./pages/my-data.html" class="navbar-link navbar-link-modal">My Data</a>        
+        <a href="./pages/routine.html" class="navbar-link navbar-link-modal">Routine</a>
+        <a href="./pages/shop-home.html" class="navbar-link navbar-link-modal">Shop</a>
+    </section>
+
+    <!-- Main Section (100 vh) -->
+    <section class="main-section main-section-my-data">
+        <header class="header">
+            <!-- Violet Bar at top of the page -->
+            <div class="top-bar"></div>
+
+            <!-- Navbar -->
+            <section class="navbar">
+                <a href="../index.html" class="navbar-link">Home</a>
+                <a href="./pages/my-data.html" class="navbar-link">My Data</a>
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                    <p id="logo-text">Teammate</p>
+                </a>
+                <a href="./pages/routine.html" class="navbar-link">Routine</a>
+                <a href="./pages/shop-home.html" class="navbar-link">Shop</a>
+
+                <button class="menu-button">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </button>
+            </section>
+        </header>
+
+        <!-- My Data Section -->
+        <section class="my-data-section">
+            <section class="data-card my-data">
+                <div class="data-card-title">
+                    <picture>
+                        <source srcset="../assets/images/images/running-person.webp" type="image/webp">
+                        <img src="../assets/images/images/running-person.png" alt="Running Person">
+                    </picture>
+                    <div>
+                        <h1 class="my-data-username card-letters" id="user-name">Mathias Ramilo</h1>
+                        <h3 class="my-data-age card-letters">Age <span id="user-age">21</span></h3>
+                    </div>
+                </div>
+                <div class="data-card-info data-card-info-my-data">
+                    <p class="card-letters">Gender: <span class="user-gender" id="user-gender">Male</span></p>
+                    <p class="card-letters">Height: <span class="user-height" id="user-height">1.83 m</span></p>
+                    <p class="card-letters">Weight: <span class="user-weight" id="user-weight">79.2 kg</span></p>
+                </div>
+                <hr>
+                <button class="button change-data-button">Change Data</button>
+            </section>
+
+            <section class="bmi-recomendations">
+                <div class="data-card-bmi">
+                    <h2 class="card-letters">Body Mass Index (BMI):</h2>
+                    <h3 class="card-letters"><span class="user-bmi" id="user-bmi">23.6</span> <span class="bmi-level" id="bmi-level">Normal</span></h3>
+                </div>
+                <p id="bmi-description" class="card-letters">Your weight is within normal levels given your height congratulations.</p>
+                <div class="my-data-recomendations">
+                    <h3>Recomendations:</h3>
+                    <div class="bmi-recomendations-list">
+                        <p class="card-letters">1. Remember to exercise at least 3 times a week</p>
+                        <p class="card-letters">2. Try to maintain a healthy diet</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Change Theme Button -->
+        <div class="themes themes-my-data">
+            <button class="bright-mode">
+                <svg id="bright-mode-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+            </button>
+            <button class="dark-mode">
+                <svg id="dark-mode-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Navbar -->
+        <section class="navbar footer-navbar">
+            <a href="../index.html" class="navbar-link footer-navbar-link">Home</a>
+            <a href="./pages/my-data.html" class="navbar-link footer-navbar-link">My Data</a>
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                <p>Teammate</p>
+            </a>
+            <a href="./pages/routine.html" class="navbar-link footer-navbar-link">Routine</a>
+            <a href="./pages/shop-home.html" class="navbar-link footer-navbar-link">Shop</a>
+        </section>
+
+        <p class="registered-trademark">© 2021 Fit Teammate</p>
+
+        <div class="developed-by">
+            <p>Developed by Mathias Ramilo</p>
+            <a target="_blank" href="https://github.com/mathiramilo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg></a>
+        </div>
+    </footer>
+    
+    <!-- My JS -->
     <script src="../src/js/app.js"></script>
 </body>
 </html>
