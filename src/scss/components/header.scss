@@ -18,6 +18,7 @@
     font-size: 1.2rem;
     color: $black;
     position: relative;
+    transition: all 0.3s ease;
 
     &::after {
         content: "";
@@ -53,5 +54,6 @@
         font-weight: 700;
         font-size: 0.92rem;
         color: $black;
+        transition: all 0.3s ease;
     }
 }

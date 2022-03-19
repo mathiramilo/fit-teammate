@@ -56,6 +56,9 @@ select:hover {
 * {
   letter-spacing: 1px; }
 
+body {
+  transition: all 0.3s ease; }
+
 ul {
   list-style: none; }
 
@@ -93,7 +96,8 @@ img {
   font-weight: 700;
   font-size: 1.2rem;
   color: #161616;
-  position: relative; }
+  position: relative;
+  transition: all 0.3s ease; }
   .navbar-link::after {
     content: "";
     display: block;
@@ -120,7 +124,8 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.92rem;
-    color: #161616; }
+    color: #161616;
+    transition: all 0.3s ease; }
 
 .footer {
   background-color: #080808;
@@ -170,16 +175,19 @@ img {
   gap: 1.4em;
   align-items: center;
   padding: 8px 15px;
-  border-radius: 25px; }
+  border-radius: 25px;
+  transition: all 0.3s ease; }
   .themes button {
     border: none;
     background-color: transparent; }
     .themes button:hover {
       cursor: pointer; }
   .themes .bright-mode svg {
-    fill: #262461; }
+    fill: #262461;
+    transition: all 0.3s ease; }
   .themes .dark-mode svg {
-    fill: #DCDCDC; }
+    fill: #DCDCDC;
+    transition: all 0.3s ease; }
 
 @media (max-width: 1196px) {
   .themes {
@@ -207,13 +215,15 @@ img {
   border-radius: 8px;
   padding: 1.6em 2.4em 1em 2.4em;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  transition: all 0.3s ease; }
 
 .routine-card hr {
   margin-bottom: 1.6em;
   height: 1px;
   border: none;
-  background-color: #CDCDCD; }
+  background-color: #CDCDCD;
+  transition: all 0.3s ease; }
 
 .routine-card h3 {
   text-transform: uppercase;
@@ -253,6 +263,9 @@ img {
     font-weight: 500;
     font-size: 1.15rem;
     color: #4FD174; }
+
+.recomended-list-darkmode {
+  background-image: linear-gradient(77.76deg, #252525 8.98%, #1C1C1C 92.82%); }
 
 .routine-button {
   background-color: #161616;
@@ -376,6 +389,9 @@ img {
     text-transform: uppercase;
     font-size: 1.2rem; }
 
+.shop-card-option-darkmode {
+  background-image: linear-gradient(216.05deg, #1E1E1E 4.93%, #181818 95.46%); }
+
 .shop-button {
   background-color: #161616;
   color: #FFFFFF;
@@ -390,7 +406,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  opacity: 0;
+  pointer-events: none; }
 
 .init-data-modal {
   display: grid;

@@ -155,6 +155,19 @@ initialDataSubmit.addEventListener('click', () => {
     }
 });
 
+
+// Initialize the variable theme as "bright"
+let theme = "bright";
+
+// Get the Dark Mode button
+const darkModeButton = document.querySelector('.dark-mode');
+darkModeButton.addEventListener('click', darkMode);
+
+// Get the Bright Mode button
+const brightModeButton = document.querySelector('.bright-mode');
+brightModeButton.addEventListener('click', brightMode);
+
+
 // Function that returns true if the string "str" only has letters, false otherwise
 function onlyLetters(str) {
     let regex = /^[a-zA-Z]+$/;
@@ -224,4 +237,108 @@ function showUserDataHome() {
             element.style.color = "#EC1E11";
         });
     }
+}
+
+// Function Dark Mode
+function darkMode() {
+    theme = "dark";
+
+    document.body.style.backgroundColor = "#030303";
+
+    const darkModeSvg = document.getElementById('dark-mode-svg');
+    const brightModeSvg = document.getElementById('bright-mode-svg');
+
+    darkModeSvg.style.fill = "#262461";
+    brightModeSvg.style.fill = "#363636";
+
+    const themes = document.querySelector('.themes');
+    themes.style.backgroundColor = "#101010";
+
+    const navbarLinks = document.querySelectorAll('.navbar-link');
+    navbarLinks.forEach(function(element) {
+        element.style.color = "#F8F8F8";
+    });
+
+    const logoText = document.getElementById('logo-text');
+    logoText.style.color = "#F8F8F8";
+
+    const secondaryCards = document.querySelectorAll('.secondary-card');
+    secondaryCards.forEach(function(element) {
+        element.style.backgroundColor = "#121212";
+    });
+
+    const cardLetters = document.querySelectorAll('.card-letters');
+    cardLetters.forEach(function(element) {
+        element.style.color = "#ffffff";
+    });
+
+    const routineButton = document.querySelector('.routine-button');
+    const shopButton = document.querySelector('.shop-button');
+    routineButton.style.backgroundColor = "#EEEEEE";
+    routineButton.style.color = "#0B0B0B";
+    shopButton.style.backgroundColor = "#EEEEEE";
+    shopButton.style.color = "#0B0B0B";
+
+    const recomendedList = document.querySelector('#recomended-list');
+    recomendedList.classList.add('recomended-list-darkmode');
+
+    const shopCardOption = document.querySelectorAll('.shop-card-option');
+    shopCardOption.forEach(function(element) {
+        element.classList.add('shop-card-option-darkmode');
+    });
+
+    const routineHr = document.getElementById('routine-card-hr');
+    routineHr.style.backgroundColor = "#3F3F3F";
+}
+
+// Function Bright Mode
+function brightMode() {
+    theme = "bright";
+
+    document.body.style.backgroundColor = "#FFFFFF";
+
+    const darkModeSvg = document.getElementById('dark-mode-svg');
+    const brightModeSvg = document.getElementById('bright-mode-svg');
+
+    darkModeSvg.style.fill = "#DCDCDC";
+    brightModeSvg.style.fill = "#262461";
+
+    const themes = document.querySelector('.themes');
+    themes.style.backgroundColor = "#F9F9F9";
+
+    const navbarLinks = document.querySelectorAll('.navbar-link');
+    navbarLinks.forEach(function(element) {
+        element.style.color = "#161616";
+    });
+
+    const logoText = document.getElementById('logo-text');
+    logoText.style.color = "#161616";
+
+    const secondaryCards = document.querySelectorAll('.secondary-card');
+    secondaryCards.forEach(function(element) {
+        element.style.backgroundColor = "#FEFEFE";
+    });
+
+    const cardLetters = document.querySelectorAll('.card-letters');
+    cardLetters.forEach(function(element) {
+        element.style.color = "#161616";
+    });
+
+    const routineButton = document.querySelector('.routine-button');
+    const shopButton = document.querySelector('.shop-button');
+    routineButton.style.backgroundColor = "#161616";
+    routineButton.style.color = "#FFFFFF";
+    shopButton.style.backgroundColor = "#161616";
+    shopButton.style.color = "#FFFFFF";
+
+    const recomendedList = document.querySelector('#recomended-list');
+    recomendedList.classList.remove('recomended-list-darkmode');
+
+    const shopCardOption = document.querySelectorAll('.shop-card-option');
+    shopCardOption.forEach(function(element) {
+        element.classList.remove('shop-card-option-darkmode');
+    });
+
+    const routineHr = document.getElementById('routine-card-hr');
+    routineHr.style.backgroundColor = "#CDCDCD";
 }

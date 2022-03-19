@@ -10,6 +10,7 @@
     align-items: center;
     padding: 8px 15px;
     border-radius: 25px;
+    transition: all 0.3s ease;
 
     button {
         border: none;
@@ -23,12 +24,14 @@
     .bright-mode {
         svg {
             fill: $main-violet; 
+            transition: all 0.3s ease;
         }
     }
 
     .dark-mode {
         svg {
             fill: #DCDCDC;
+            transition: all 0.3s ease;
         }
     }
 }
