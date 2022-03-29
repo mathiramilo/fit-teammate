@@ -1,6 +1,6 @@
 .main-section {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -11,6 +11,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2em;
+    padding: 0 1em;
 }
 
 .secondary-card {
@@ -441,6 +442,36 @@
     }
 }
 
+@media (max-width: 1340px) {
+    .cards-sections {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1.6em;
+        margin-top: 2em;
+        margin-bottom: 3em;
+    }
+
+    .data-card {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .routine-card {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        max-width: 500px;
+        justify-self: flex-end;
+    }
+
+    .shop-card {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        max-width: 500px;
+        justify-self: flex-start;
+    }
+}
+
 @media (max-width: 1048px) {
     .init-data-modal-image {
         display: none;
@@ -448,6 +479,30 @@
 
     .init-data-modal {
         grid-template-columns: 100%;
+    }
+}
+
+@media (max-width: 940px) {
+    .cards-sections {
+        grid-template-columns: 100%;
+    }
+
+    .data-card {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        justify-self: center;
+    }
+
+    .routine-card {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        justify-self: center;
+    }
+
+    .shop-card {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        justify-self: center;
     }
 }
 
@@ -463,5 +518,26 @@
 
     .init-data-modal-main {
         padding: 1.5em 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-sections {
+        margin-top: 0.5em;
+    }
+
+    .data-card {
+        width: 99%;
+        padding: 1em;
+    }
+
+    .routine-card {
+        width: 95%;
+        padding: 1em;
+    }
+
+    .shop-card {
+        width: 95%;
+        padding: 1em 0.5em;
     }
 }

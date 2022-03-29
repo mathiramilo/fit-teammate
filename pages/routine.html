@@ -11,7 +11,159 @@
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    
+    <!-- Modal Routine -->
+    <section class="routine-modal-container modal-routine">
+        <section class="routine-modal">
+            <div class="routine-modal-title">
+                <div class="logo">
+                    <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                    <p>Teammate</p>
+                </div>
+                <h2>Enter The Data</h2>
+            </div>
+
+            <form class="routine-modal-form">
+                <p>Fill all fields *</p>
+                <div class="field">
+                    <label for="days">How many days per week can you train? <span>(2 - 5)</span></label>
+                    <input type="number" id="days" name="days" autocomplete="off">
+                </div>
+                <input id="routine-submit" class="button button-routine-modal" type="submit" value="Give Me My Routine!">
+            </form>
+
+            <p class="registered-trademark">© 2021 Fit Teammate</p>
+        </section>
+    </section>
+
+    <!-- Mobile NavBar Modal -->
+    <section class="navbar-modal">
+        <button class="x-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+
+        <a href="../index.html" class="navbar-link navbar-link-modal">Home</a>
+        <a href="./my-data.html" class="navbar-link navbar-link-modal">My Data</a>        
+        <a href="./routine.html" class="navbar-link navbar-link-modal">Routine</a>
+        <a href="./shop-home.html" class="navbar-link navbar-link-modal">Shop</a>
+    </section>
+
+    <section class="main-section main-section-routine">
+        <header class="header">
+            <!-- Violet Bar at top of the page -->
+            <div class="top-bar"></div>
+
+            <!-- Navbar -->
+            <section class="navbar">
+                <a href="../index.html" class="navbar-link">Home</a>
+                <a href="./my-data.html" class="navbar-link">My Data</a>
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                    <p id="logo-text">Teammate</p>
+                </a>
+                <a href="./routine.html" class="navbar-link">Routine</a>
+                <a href="./shop-home.html" class="navbar-link">Shop</a>
+
+                <button class="menu-button">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </button>
+            </section>
+        </header>
+
+        <section class="routine-main-content">
+            <section class="routine-my-data">
+                <div class="rmd-title">
+                    <picture>
+                        <source srcset="../assets/images/images/routine-logo.webp" type="image/webp">
+                        <img src="./assets/images/images/routine-logo.png" alt="Woman Training">
+                    </picture>
+                    <h2 class="card-letters">Custom Routine</h2>
+                </div>
+                <div class="rmd-data">
+                    <p class="card-letters">Gender: <span class="user-gender" id="user-gender">Male</span></p>
+                    <p class="card-letters">Body Mass Index (BMI): <span class="user-bmi" id="user-bmi">23.6</span></p>
+                    <p class="card-letters">Training days per week: <span class="user-tdw" id="user-tdw">3</span></p>
+                </div>
+                <button class="button button-change-tdw">Change Data</button>
+            </section>
+
+            <section class="custom-routine">
+                <div class="training-plan-grid">
+                    <div class="training-day-card">
+                        <h3>Day 1</h3>
+                        <div class="tdc-plan">
+                            <p>1. Chest & Triceps</p>
+                            <p>2. Core & Abs 15 min</p>
+                            <p>3. Run 10 min</p>
+                        </div>
+                    </div>
+                    <div class="training-day-card">
+                        <h3>Day 2</h3>
+                        <div class="tdc-plan">
+                            <p>1. Back & Biceps</p>
+                            <p>2. Core & Abs 15 min</p>
+                            <p>3. Run 10 min</p>
+                        </div>
+                    </div>
+                    <div class="training-day-card">
+                        <h3>Day 3</h3>
+                        <div class="tdc-plan">
+                            <p>1. Legs & Shoulders</p>
+                            <p>2. Core & Abs 15 min</p>
+                            <p>3. Run 10 min</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diet-tips">
+                    <h2>Diet:</h2>
+                    <div class="dt-list">
+                        <p>1. Try to mantain a healthy diet</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Change Theme Button -->
+        <div class="themes themes-my-data">
+            <button class="bright-mode">
+                <svg id="bright-mode-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+            </button>
+            <button class="dark-mode">
+                <svg id="dark-mode-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Navbar -->
+        <section class="navbar footer-navbar">
+            <a href="../index.html" class="navbar-link footer-navbar-link">Home</a>
+            <a href="./pages/my-data.html" class="navbar-link footer-navbar-link">My Data</a>
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                <p>Teammate</p>
+            </a>
+            <a href="./pages/routine.html" class="navbar-link footer-navbar-link">Routine</a>
+            <a href="./pages/shop-home.html" class="navbar-link footer-navbar-link">Shop</a>
+        </section>
+
+        <p class="registered-trademark">© 2021 Fit Teammate</p>
+
+        <div class="developed-by">
+            <p>Developed by Mathias Ramilo</p>
+            <a target="_blank" href="https://github.com/mathiramilo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg></a>
+        </div>
+    </footer>
 
     <script src="../src/js/app.js"></script>
 </body>

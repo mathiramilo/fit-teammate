@@ -1,0 +1,283 @@
+// Routine Modal
+.routine-modal-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000005b;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.routine-modal {
+    background-color: $white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    padding: 1em 1em 2.5em 1em;
+    position: relative;
+
+    .registered-trademark {
+        color: #000000;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        font-size: 0.7rem;
+    }
+}
+
+.routine-modal-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8em;
+    margin-bottom: 1em;
+
+    .logo {
+        img {
+            width: 60px;
+        }
+
+        p {
+            font-size: 0.6rem;
+        }
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        color: $black;
+    }
+}
+
+.routine-modal-form {
+    background-color: #00000015;
+    border-radius: 4px;
+    padding: 0.5em;
+    
+    p {
+        font-size: 0.8rem;
+        margin-bottom: 1.5em;
+    }
+
+    .field {
+        margin-bottom: 1em;
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 0.4em;
+        }
+
+        input {
+            width: 80px;
+            margin: auto;
+        }
+    }
+}
+
+.button-routine-modal {
+    border: none;
+    background-color: $main-violet;
+    color: $white;
+    display: block;
+    margin: auto;
+    font-size: 1rem;
+}
+
+@media (min-width: 480px) {
+    .routine-modal-title {
+        gap: 1.5em;
+    
+        .logo {
+            img {
+                width: 80px;
+            }
+    
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            color: $black;
+        }
+    }
+}
+
+// Routine Layout
+.routine-main-content {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 1.5em;
+}
+
+.routine-my-data {
+    padding-bottom: 2em;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.rmd-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1.6em;
+    padding-left: 0.3em;
+    margin-bottom: 1.8em;
+
+    picture {
+        width: 45px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+    }
+}
+
+.rmd-data {
+    padding-left: 1em;
+    margin-bottom: 2em;
+
+    p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 0.5em;
+
+        &:first-of-type {
+            margin-bottom: 2em;
+        }
+
+        .user-gender {
+            color: $blue;
+        }
+
+        .user-bmi {
+            color: $green;
+        }
+
+        span {
+            margin-left: 0.4em;
+        }
+    }
+}
+
+.button-change-tdw {
+    border: none;
+    color: $white;
+    background-color: $main-violet;
+    display: block;
+    margin: auto;
+    width: 65%;
+}
+
+.custom-routine {
+    margin-top: 1em;
+}
+
+.training-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8em;
+}
+
+.training-day-card {
+    background-color: #FBFBFB;
+    box-shadow: 1.45572px 1.45572px 8.00648px -2.18359px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    padding: 0.5em;
+    max-width: 200px;
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        margin-bottom: 0.6em;
+        margin-left: 0.2em;
+    }
+
+    .tdc-plan {
+        p {
+            font-size: 0.8rem;
+            margin-bottom: 0.3em;
+        }
+    }
+}
+
+.diet-tips {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    h2 {
+        text-transform: uppercase;
+        color: $main-violet;
+        font-size: 1.6rem;
+        margin-bottom: 0.6em;
+    }
+
+    .dt-list {
+        margin-left: 0.6em;
+
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (min-width: 586px) {
+    .training-plan-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 825px) {
+    .routine-main-content {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 4em;
+    }
+
+    .training-plan-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .routine-my-data {
+        border-bottom: none;
+        border-right: 1px solid #d1d1d1;
+    }
+
+    .custom-routine {
+        padding-left: 2em;
+    }
+
+    .routine-my-data {
+        padding-top: 0.5em;
+    }
+
+    .rmd-title {
+        margin-bottom: 3em;
+    }
+
+    .rmd-data {
+        margin-bottom: 3em;
+    }
+}
+
+@media (min-width: 1064px) {
+    .routine-main-content {
+        grid-template-columns: 40% 60%;
+        margin-top: 4em;
+    }
+
+    .training-plan-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

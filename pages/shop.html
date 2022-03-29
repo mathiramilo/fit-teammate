@@ -11,7 +11,243 @@
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    
+    <!-- Mobile NavBar Modal -->
+    <section class="navbar-modal">
+        <button class="x-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+
+        <a href="../index.html" class="navbar-link navbar-link-modal">Home</a>
+        <a href="./my-data.html" class="navbar-link navbar-link-modal">My Data</a>        
+        <a href="./routine.html" class="navbar-link navbar-link-modal">Routine</a>
+        <a href="./shop-home.html" class="navbar-link navbar-link-modal">Shop</a>
+    </section>
+
+    <section class="main-section main-section-shop">
+        <header class="header">
+            <!-- Violet Bar at top of the page -->
+            <div class="top-bar"></div>
+
+            <!-- Navbar -->
+            <section class="navbar">
+                <a href="../index.html" class="navbar-link">Home</a>
+                <a href="./my-data.html" class="navbar-link">My Data</a>
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                    <p id="logo-text">Teammate</p>
+                </a>
+                <a href="./routine.html" class="navbar-link">Routine</a>
+                <a href="./shop-home.html" class="navbar-link">Shop</a>
+
+                <button class="menu-button">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </button>
+            </section>
+        </header>
+
+        <section class="shop-main-content">
+            <div class="shop-title-options">
+                <h1>Fitness Shop</h1>
+                <div class="cat-order">
+                    <div class="cat-ord category">
+                        <label for="category">Category</label>
+                        <select name="category" id="category">
+                            <option value="equipment" selected>Equipment</option>
+                            <option value="supplements">Supplements</option>
+                        </select>
+                    </div>
+                    <div class="cat-ord order-by">
+                        <label for="order-by">Order By</label>
+                        <select name="order-by" id="order-by">
+                            <option value="relevant" selected>More Relevant</option>
+                            <option value="a-z">A - Z</option>
+                            <option value="z-a">Z - A</option>
+                            <option value="higher-price">Higher Price</option>
+                            <option value="lower-price">Lower Price</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <section class="filters-products">
+                <div class="filters">
+                    <div class="search-subtitle">
+                        <input type="search" name="search" id="search" placeholder="Search..." autocomplete="off">
+                        <h2>Equipments</h2>
+                    </div>
+                    <div class="type-list">
+                        <button id="machines">Machines</button>
+                        <button id="dumbells">Dumbells</button>
+                        <button id="weights">Weights</button>
+                        <button id="bars">Bars</button>
+                        <button id="mats">Mats</button>
+                    </div>
+                    <div class="price-filter">
+                        <h2>Price</h2>
+                        <input type="range" id="price-filter" name="price-filter" min="0" max="1000">
+                        <p>Max: US$ <span id="max-price-filter">1000</span></p>
+                    </div>
+                </div>
+
+                <div class="products">
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/machine-chest.webp" type="image/webp">
+                                <img src="../assets/images/images/products/machine-chest.png" alt="Chest Bench">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Chest Bench</h3>
+                            <p>US$ 145</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/machine-run.webp" type="image/webp">
+                                <img src="../assets/images/images/products/machine-run.png" alt="Running Machine">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Running Machine</h3>
+                            <p>US$ 750</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/machine-bike.webp" type="image/webp">
+                                <img src="../assets/images/images/products/machine-bike.png" alt="Stationary Bike">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Stationary Bike</h3>
+                            <p>US$ 379</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/dumbells-10.webp" type="image/webp">
+                                <img src="../assets/images/images/products/dumbells-10.png" alt="Dumbells 10kg">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Dumbells 10kg</h3>
+                            <p>US$ 48</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/dumbells-10.webp" type="image/webp">
+                                <img src="../assets/images/images/products/dumbells-10.png" alt="Dumbells 6kg">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Dumbells 6kg</h3>
+                            <p>US$ 38</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/weight-10kg.webp" type="image/webp">
+                                <img src="../assets/images/images/products/weight-10kg.png" alt="Weight 10kg">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Weight 10kg</h3>
+                            <p>US$ 28</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/bars-olympic.webp" type="image/webp">
+                                <img src="../assets/images/images/products/bars-olympic.png" alt="Olympic Bar">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Olympic Bar</h3>
+                            <p>US$ 90</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="image-div">
+                            <picture>
+                                <source srcset="../assets/images/images/products/mats.webp" type="image/webp">
+                                <img src="../assets/images/images/products/mats.png" alt="Fitness Mat">
+                            </picture>
+                        </div>
+                        <div class="name-price">
+                            <h3>Fitness Mat</h3>
+                            <p>US$ 20</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Change Theme Button -->
+        <div class="themes themes-my-data">
+            <button class="bright-mode">
+                <svg id="bright-mode-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                    <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+            </button>
+            <button class="dark-mode">
+                <svg id="dark-mode-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Shopping Cart Button -->
+        <button class="shopping-cart-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div class="cart-items-quantity">
+                <p id="cart-items-quantity">1</p>
+            </div>
+        </button>
+    </section>
+
+    <footer class="footer">
+        <!-- Navbar -->
+        <section class="navbar footer-navbar">
+            <a href="../index.html" class="navbar-link footer-navbar-link">Home</a>
+            <a href="./pages/my-data.html" class="navbar-link footer-navbar-link">My Data</a>
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo/fit.png" alt="Fit Logo">
+                <p>Teammate</p>
+            </a>
+            <a href="./pages/routine.html" class="navbar-link footer-navbar-link">Routine</a>
+            <a href="./pages/shop-home.html" class="navbar-link footer-navbar-link">Shop</a>
+        </section>
+
+        <p class="registered-trademark">© 2021 Fit Teammate</p>
+
+        <div class="developed-by">
+            <p>Developed by Mathias Ramilo</p>
+            <a target="_blank" href="https://github.com/mathiramilo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg></a>
+        </div>
+    </footer>
 
     <script src="../src/js/app.js"></script>
 </body>

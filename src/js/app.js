@@ -179,7 +179,7 @@ brightModeButton.addEventListener('click', brightMode);
 
 // Function that returns true if the string "str" only has letters, false otherwise
 function onlyLetters(str) {
-    let regex = /^[a-zA-Z]+$/;
+    let regex = /^[a-zA-Z\s]+$/;
     if (regex.test(str)) {
         return true;
     } else {

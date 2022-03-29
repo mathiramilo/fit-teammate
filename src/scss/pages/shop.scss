@@ -1,0 +1,153 @@
+.shop-main-content {
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
+    margin-top: 0.8em;
+}
+
+.shop-title-options {
+    h1 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin-bottom: 0.4em;
+        color: $black;
+    }
+}
+
+.cat-order {
+    display: flex;
+    gap: 0.3em;
+    margin-bottom: 0.8em;
+}
+
+.cat-ord {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+
+    label {
+        font-size: 0.7rem;
+    }
+
+    select {
+        width: 60%;
+        background-color: #F4F4F4;
+        border: 1px solid #DDDDDD;
+        font-size: 0.7rem;
+        font-weight: 500;
+        padding: 0.2em;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.filters-products {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.filters {
+
+}
+
+.search-subtitle {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 1.25em;
+    align-items: center;
+    margin-bottom: 0.6em;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        color: $black;
+        font-weight: 600;
+    }
+
+    input {
+        background-color: #F4F4F4;
+        border: 1px solid #DDDDDD;
+        padding: 0.2em;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.type-list {
+    display: flex;
+    gap: 0.8em;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-bottom: 0.8em;
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: #838383;
+        font-size: 1rem;
+    }
+}
+
+.price-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.8em;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        color: $black;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 0.8rem;
+        color: #757575;
+    }
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8em;
+    margin-bottom: 2em;
+}
+
+.product-card {
+    height: 100%;
+}
+
+.image-div {
+    background-color: #F4F4F4;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.4em;
+
+    img {
+        width: 120px;
+    }
+}
+
+.name-price {
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        color: $black;
+        margin-bottom: 0.3em;
+    }
+
+    p {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+}
