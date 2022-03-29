@@ -1108,7 +1108,9 @@ button:hover {
 .name-price p {
   text-align: center;
   text-transform: uppercase;
-  font-size: 0.8rem; }
+  font-size: 0.8rem;
+  color: #979797;
+  font-weight: 500; }
 
 @media (min-width: 624px) {
   .shop-title-options {
@@ -1218,3 +1220,98 @@ button:hover {
     width: 90px; }
   .shop-equipment-card {
     gap: 0.6em; } }
+
+.product-main-content {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 0.6em;
+  margin-bottom: 2em; }
+
+.product-path {
+  display: flex;
+  gap: 0.2em;
+  margin-bottom: 0.4em; }
+  .product-path a, .product-path p {
+    color: #929292;
+    font-size: 1rem;
+    font-weight: 500; }
+
+.product-principal-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1em; }
+
+.ppg-image {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .ppg-image picture {
+    width: 280px; }
+
+.ppg-info h1 {
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  margin-bottom: 0.4em;
+  font-weight: 600;
+  color: #161616; }
+
+.ppg-info > h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #929292; }
+
+.ppg-info hr {
+  margin: 1em 0;
+  height: 1px;
+  background-color: #e4e4e4;
+  border: none; }
+
+.product-description {
+  margin-bottom: 0.8em; }
+  .product-description h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.4em;
+    color: #161616; }
+  .product-description p {
+    font-size: 1rem;
+    color: #161616; }
+
+.product-dimensions {
+  margin-bottom: 2em; }
+  .product-dimensions h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.4em;
+    color: #161616; }
+  .product-dimensions p {
+    font-size: 1rem;
+    color: #161616; }
+
+.button-add-to-cart {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
+  width: 100%;
+  max-width: 480px;
+  color: #FFFFFF;
+  background-color: #161616;
+  margin: auto; }
+  .button-add-to-cart svg {
+    width: 18px; }
+
+@media (min-width: 825px) {
+  .product-principal-grid {
+    grid-template-columns: repeat(2, 1fr); }
+  .button-add-to-cart {
+    max-width: 240px;
+    margin: 0; }
+  .product-main-content {
+    margin-top: 4em; }
+  .product-path {
+    margin-bottom: 2em; } }

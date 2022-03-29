@@ -1,0 +1,128 @@
+.product-main-content {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 0.6em;
+    margin-bottom: 2em;
+}
+
+.product-path {
+    display: flex;
+    gap: 0.2em;
+    margin-bottom: 0.4em;
+
+    a, p {
+        color: #929292; 
+        font-size: 1rem;   
+        font-weight: 500;
+    }
+}
+
+.product-principal-grid {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1em;
+}
+
+.ppg-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    picture {
+        width: 280px;
+    }
+}
+
+.ppg-info {
+    h1 {
+        text-transform: uppercase;
+        font-size: 1.9rem;
+        margin-bottom: 0.4em;
+        font-weight: 600;
+        color: $black;
+    }
+
+    > h2 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #929292;
+    }
+
+    hr {
+        margin: 1em 0;
+        height: 1px;
+        background-color: #e4e4e4;
+        border: none;
+    }
+}
+
+.product-description {
+    margin-bottom: 0.8em;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.4em;
+        color: $black;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $black;
+    }
+}
+
+.product-dimensions {
+    margin-bottom: 2em;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.4em;
+        color: $black;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $black;
+    }
+}
+
+.button-add-to-cart {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2em;
+    width: 100%;
+    max-width: 480px;
+    color: $white;
+    background-color: $black;
+    margin: auto;
+
+    svg {
+        width: 18px;
+    }
+}
+
+@media (min-width: 825px) {
+    .product-principal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .button-add-to-cart {
+        max-width: 240px;
+        margin: 0;
+    }
+
+    .product-main-content {
+        margin-top: 4em;
+    }
+
+    .product-path {
+        margin-bottom: 2em;
+    }
+}
