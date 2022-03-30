@@ -37,6 +37,7 @@
         font-weight: 500;
         padding: 0.2em;
         border-radius: 2px;
+        transition: all 0.3s;
 
         &:focus {
             outline: none;
@@ -73,6 +74,7 @@
         border: 1px solid #DDDDDD;
         padding: 0.2em;
         border-radius: 2px;
+        transition: all 0.3s;
 
         &:focus {
             outline: none;
@@ -132,6 +134,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 0.4em;
+    transition: all 0.3s;
 
     img {
         width: 120px;

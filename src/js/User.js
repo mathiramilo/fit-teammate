@@ -1,6 +1,6 @@
 // Object that represents the user
 
-class User {
+export default class User {
     // User has a name, lastname, age, gender, height & weight
     constructor(name, lastname, age, gender, height, weight) {
         this.name = name;

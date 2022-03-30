@@ -54,6 +54,7 @@
         height: 1px;
         background-color: #e4e4e4;
         border: none;
+        transition: all 0.3s;
     }
 }
 
@@ -103,8 +104,13 @@
     background-color: $black;
     margin: auto;
 
+    p {
+        transition: all 0.3s;
+    }
+
     svg {
         width: 18px;
+        transition: all 0.3s;
     }
 }
 

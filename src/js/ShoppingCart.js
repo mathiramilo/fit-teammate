@@ -1,6 +1,6 @@
 // Object that represents a Shopping Cart
 
-class ShoppingCart {
+export default class ShoppingCart {
     // Shopping Cart has a list of Products
     constructor(products) {
         this.products = products;

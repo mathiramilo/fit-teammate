@@ -1,6 +1,6 @@
 // Object that represents an Inventary
 
-class Inventary {
+export default class Inventary {
     // Inventary has a list of all the products available
     constructor(products) {
         this.products = products;

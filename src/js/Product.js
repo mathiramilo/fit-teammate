@@ -1,6 +1,6 @@
 // Object that represents a Product
 
-class Product {
+export default class Product {
     // Product has a unique id, name, price, description & dimensions
     constructor(id, name, price, description, dimensions) {
         this.id = id;

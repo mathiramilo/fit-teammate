@@ -1,21 +1,54 @@
-// INITIAL DATA MODAL
+// Import Modules
+import User from "./User.js";
+import Product from "./Product.js";
+import Inventary from "./Inventary.js";
+import ShoppingCart from "./ShoppingCart.js";
 
-// 1. Get the necessary elements from the DOM
+// --- HOME ---
+
+// 1. Create the object that represents the user
+let user = new User("", "", "", "", "", "");
+
+// 2. Get the necessary elements from the DOM
 const initialDataSubmit = document.getElementById('initial-data-submit');
 
-// 2. Create the object that represents the user
-let user = {
-    name: "",
-    lastname: "",
-    age: "",
-    gender: "",
-    height: "",
-    weight: "",
-    bmi: ""
-};
+// 3. Validates the data entered by the user & Manage it, if user is at home
+if (!!initialDataSubmit) initialDataSubmit.addEventListener('click', initialDataValidation);
 
-// 3. Validates the data entered by the user & Manage it
-initialDataSubmit.addEventListener('click', () => {
+
+// --- HAMBURGUER MENU ---
+
+// Show the menu modal
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', showMenu);
+
+// Close the menu modal
+const xButton = document.querySelector('.x-button');
+xButton.addEventListener('click', closeMenu);
+
+
+// --- THEMES ---
+
+// Initialize the variable theme as "bright"
+let theme = "bright";
+
+// Get the Dark Mode button
+const darkModeButton = document.querySelector('.dark-mode');
+darkModeButton.addEventListener('click', darkMode);
+
+// Get the Bright Mode button
+const brightModeButton = document.querySelector('.bright-mode');
+brightModeButton.addEventListener('click', brightMode);
+
+
+
+// --- FUNCTIONS ---
+
+
+// --- Home ---
+
+// Function that validates the initial data modal & asigns the data to the user
+function initialDataValidation() {
     // Get all the input values
     let name = document.getElementById('name').value;
     let lastname = document.getElementById('lastname').value;
@@ -130,7 +163,6 @@ initialDataSubmit.addEventListener('click', () => {
             user['gender'] = gender;
             user['height'] = height;
             user['weight'] = weight;
-            user['bmi'] = bmiCalculator(weight, height);
 
             showUserDataHome();
 
@@ -153,45 +185,7 @@ initialDataSubmit.addEventListener('click', () => {
             fillAllFields.style.animation = "none";
         }, 1000);
     }
-});
-
-
-// Show the menu modal
-const menuButton = document.querySelector('.menu-button');
-menuButton.addEventListener('click', showMenu);
-
-// Close the menu modal
-const xButton = document.querySelector('.x-button');
-xButton.addEventListener('click', closeMenu);
-
-
-// Initialize the variable theme as "bright"
-let theme = "bright";
-
-// Get the Dark Mode button
-const darkModeButton = document.querySelector('.dark-mode');
-darkModeButton.addEventListener('click', darkMode);
-
-// Get the Bright Mode button
-const brightModeButton = document.querySelector('.bright-mode');
-brightModeButton.addEventListener('click', brightMode);
-
-
-// Function that returns true if the string "str" only has letters, false otherwise
-function onlyLetters(str) {
-    let regex = /^[a-zA-Z\s]+$/;
-    if (regex.test(str)) {
-        return true;
-    } else {
-        return false;
-    }
 }
-
-// Function that calculates the bmi of a person given his height & weight
-function bmiCalculator(weight, height) {
-    return (weight / (Math.pow((height / 100), 2))).toFixed(1);
-}
-
 
 // Function that prints in the home DOM the user data
 function showUserDataHome() {
@@ -208,9 +202,9 @@ function showUserDataHome() {
     userAge.innerHTML = `${user.age}`;
     userHeight.innerHTML = `${user.height / 100} m`;
     userWeight.innerHTML = `${user.weight} kg`;
-    userBmi.innerHTML = `${user.bmi}`;
+    userBmi.innerHTML = `${user.calculateBMI()}`;
 
-    if (user.bmi < 18.5) {
+    if (user.calculateBMI() < 18.5) {
         // Low
         userBmi.style.color = "#EC9513";
         userBmiLevel.innerHTML = "Low";
@@ -219,7 +213,7 @@ function showUserDataHome() {
         recomendedListItems.forEach(function(element) {
             element.style.color = "#EC9513";
         });
-    } else if (user.bmi < 25) {
+    } else if (user.calculateBMI() < 25) {
         // Normal
         userBmi.style.color = "#4FD174";
         userBmiLevel.innerHTML = "Normal";
@@ -228,7 +222,7 @@ function showUserDataHome() {
         recomendedListItems.forEach(function(element) {
             element.style.color = "#4FD174";
         });
-    } else if (user.bmi < 30) {
+    } else if (user.calculateBMI() < 30) {
         // High
         userBmi.style.color = "#EC9513";
         userBmiLevel.innerHTML = "High";
@@ -250,6 +244,8 @@ function showUserDataHome() {
 }
 
 
+// --- Hamburguer Menu ---
+
 // Function thats show the menu modal
 function showMenu() {
     const navbarModal = document.querySelector('.navbar-modal');
@@ -269,6 +265,8 @@ function closeMenu() {
     navbarModal.style.pointerEvents = "none";
 }
 
+
+// --- Themes ---
 
 // Function Dark Mode
 function darkMode() {
@@ -334,6 +332,8 @@ function darkMode() {
     const menuIcon = document.querySelector('.menu-icon');
     menuIcon.style.fill = "#ffffff";
 
+    // MY DATA
+
     if (!!document.querySelector('.my-data-hr')) {
         const myDataHr = document.querySelector('.my-data-hr');
         myDataHr.style.backgroundColor = "#2D2D2D";
@@ -342,6 +342,69 @@ function darkMode() {
     if (!!document.querySelector('.my-data')) {
         const myData = document.querySelector('.my-data');
         myData.style.borderColor = "#666666";
+    }
+
+    // ROUTINE
+
+    if (!!document.querySelectorAll('.training-day-card')) {
+        const trainingDayCards = document.querySelectorAll('.training-day-card');
+        trainingDayCards.forEach(function(element) {
+            element.style.backgroundColor = "#111111";
+        });
+    }
+
+    if (!!document.querySelector('.routine-my-data')) {
+        const routineMyData = document.querySelector('.routine-my-data');
+        routineMyData.style.borderColor = "#1d1d1d";
+    }
+
+    // SHOP-HOME
+
+    const productChooseCards = document.querySelectorAll('.product-choose-card');
+    productChooseCards.forEach(function(element) {
+        element.classList.add('product-choose-card-darkmode');
+    });
+
+    // SHOP
+
+    const imageDivs = document.querySelectorAll('.image-div');
+    imageDivs.forEach(function(element) {
+        element.style.backgroundColor = "#0D0D0D";
+    });
+
+    const shopSelects = document.querySelectorAll('.shop-select');
+    shopSelects.forEach(function(element) {
+        element.style.backgroundColor = "#1B1B1B";
+        element.style.borderColor = "#262626";
+    });
+
+    if (!!document.querySelector('.shop-search')) {
+        const shopSearch = document.querySelector('.shop-search');
+        shopSearch.style.backgroundColor = "#1B1B1B";
+        shopSearch.style.borderColor = "#393939";
+    }
+
+    if (!!document.querySelector('.shopping-cart-button')) {
+        const shoppingCartButton = document.querySelector('.shopping-cart-button');
+        const cartIcon = document.querySelector('.cart-icon');
+        shoppingCartButton.style.backgroundColor = "#1B1B1B";
+        cartIcon.style.fill = "#A9A9A9";
+    }
+
+    // PRODUCT
+
+    if (!!document.querySelector('.product-hr')) {
+        const prodHr = document.querySelector('.product-hr');
+        prodHr.style.backgroundColor = "#3C3C3C";
+    }
+
+    if (!!document.querySelector('.button-add-to-cart')) {
+        const buttonATC = document.querySelector('.button-add-to-cart');
+        const atcLetters = document.querySelector('.atc-letters'); 
+        const prodCartIcon = document.querySelector('.prod-cart-icon');
+        buttonATC.style.backgroundColor = "#FCFCFC";
+        atcLetters.style.color = "#252525";
+        prodCartIcon.style.fill = "#252525";
     }
 }
 
@@ -415,6 +478,8 @@ function brightMode() {
     const menuIcon = document.querySelector('.menu-icon');
     menuIcon.style.fill = "#0A0A0A";
 
+    // MY DATA
+
     if (!!document.querySelector('.my-data-hr')) {
         const myDataHr = document.querySelector('.my-data-hr');
         myDataHr.style.backgroundColor = "#e6e6e6";
@@ -423,5 +488,81 @@ function brightMode() {
     if (!!document.querySelector('.my-data')) {
         const myData = document.querySelector('.my-data');
         myData.style.borderColor = "#e6e6e6";
+    }
+
+    // ROUTINE
+
+    if (!!document.querySelectorAll('.training-day-card')) {
+        const trainingDayCards = document.querySelectorAll('.training-day-card');
+        trainingDayCards.forEach(function(element) {
+            element.style.backgroundColor = "#FBFBFB";
+        });
+    }
+
+    if (!!document.querySelector('.routine-my-data')) {
+        const routineMyData = document.querySelector('.routine-my-data');
+        routineMyData.style.borderColor = "#d1d1d1";
+    }
+
+    // SHOP HOME
+
+    const productChooseCards = document.querySelectorAll('.product-choose-card');
+    productChooseCards.forEach(function(element) {
+        element.classList.remove('product-choose-card-darkmode');
+    });
+
+    // SHOP
+
+    const imageDivs = document.querySelectorAll('.image-div');
+    imageDivs.forEach(function(element) {
+        element.style.backgroundColor = "#F4F4F4";
+    });
+
+    const shopSelects = document.querySelectorAll('.shop-select');
+    shopSelects.forEach(function(element) {
+        element.style.backgroundColor = "#F4F4F4";
+        element.style.borderColor = "#DDDDDD";
+    });
+
+    if (!!document.querySelector('.shop-search')) {
+        const shopSearch = document.querySelector('.shop-search');
+        shopSearch.style.backgroundColor = "#F4F4F4";
+        shopSearch.style.borderColor = "#DDDDDD";
+    }
+
+    if (!!document.querySelector('.shopping-cart-button')) {
+        const shoppingCartButton = document.querySelector('.shopping-cart-button');
+        const cartIcon = document.querySelector('.cart-icon');
+        shoppingCartButton.style.backgroundColor = "#F9F9F9";
+        cartIcon.style.fill = "#363636";
+    }
+
+    // PRODUCT
+
+    if (!!document.querySelector('.product-hr')) {
+        const prodHr = document.querySelector('.product-hr');
+        prodHr.style.backgroundColor = "#e4e4e4";
+    }
+
+    if (!!document.querySelector('.button-add-to-cart')) {
+        const buttonATC = document.querySelector('.button-add-to-cart');
+        const atcLetters = document.querySelector('.atc-letters'); 
+        const prodCartIcon = document.querySelector('.prod-cart-icon');
+        buttonATC.style.backgroundColor = "#161616";
+        atcLetters.style.color = "#FFFFFF";
+        prodCartIcon.style.fill = "#FFFFFF";
+    }
+}
+
+
+// --- Other ---
+
+// Function that returns true if the string "str" only has letters, false otherwise
+function onlyLetters(str) {
+    let regex = /^[a-zA-Z\s]+$/;
+    if (regex.test(str)) {
+        return true;
+    } else {
+        return false;
     }
 }

@@ -277,7 +277,8 @@ button:hover {
     box-shadow: 0px 0px 5px -2px black; }
   .shopping-cart-button svg {
     width: 24px;
-    fill: #363636; }
+    fill: #363636;
+    transition: all 0.3s; }
   .shopping-cart-button .cart-items-quantity {
     position: absolute;
     top: -5px;
@@ -890,7 +891,8 @@ button:hover {
 
 .routine-my-data {
   padding-bottom: 2em;
-  border-bottom: 1px solid #d1d1d1; }
+  border-bottom: 1px solid #d1d1d1;
+  transition: all 0.3s ease; }
 
 .rmd-title {
   display: flex;
@@ -1025,7 +1027,8 @@ button:hover {
     font-size: 0.7rem;
     font-weight: 500;
     padding: 0.2em;
-    border-radius: 2px; }
+    border-radius: 2px;
+    transition: all 0.3s; }
     .cat-ord select:focus {
       outline: none; }
 
@@ -1049,7 +1052,8 @@ button:hover {
     background-color: #F4F4F4;
     border: 1px solid #DDDDDD;
     padding: 0.2em;
-    border-radius: 2px; }
+    border-radius: 2px;
+    transition: all 0.3s; }
     .search-subtitle input:focus {
       outline: none; }
 
@@ -1094,7 +1098,8 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.4em; }
+  margin-bottom: 0.4em;
+  transition: all 0.3s; }
   .image-div img {
     width: 120px; }
 
@@ -1192,6 +1197,9 @@ button:hover {
     font-size: 1.1rem;
     color: #161616; }
 
+.product-choose-card-darkmode {
+  background-image: linear-gradient(216.05deg, #1E1E1E 4.93%, #181818 95.46%); }
+
 .shop-supplements-card picture {
   width: 60px; }
 
@@ -1265,7 +1273,8 @@ button:hover {
   margin: 1em 0;
   height: 1px;
   background-color: #e4e4e4;
-  border: none; }
+  border: none;
+  transition: all 0.3s; }
 
 .product-description {
   margin-bottom: 0.8em; }
@@ -1302,8 +1311,11 @@ button:hover {
   color: #FFFFFF;
   background-color: #161616;
   margin: auto; }
+  .button-add-to-cart p {
+    transition: all 0.3s; }
   .button-add-to-cart svg {
-    width: 18px; }
+    width: 18px;
+    transition: all 0.3s; }
 
 @media (min-width: 825px) {
   .product-principal-grid {
