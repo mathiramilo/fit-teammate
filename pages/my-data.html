@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Modal Change Data -->
-    <section class="init-data-modal-container change-data-modal">
+    <section id="change-data-modal" class="init-data-modal-container change-data-modal">
         <section class="init-data-modal">
             <div class="init-data-modal-image">
                 <div class="logo">
@@ -44,8 +44,8 @@
                             <label for="gender">Gender</label>
                             <select id="gender" name="gender">
                                 <option value="" selected disabled></option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="field">
@@ -116,14 +116,14 @@
                         <img src="../assets/images/images/running-person.png" alt="Running Person">
                     </picture>
                     <div>
-                        <h1 class="my-data-username card-letters" id="user-name">Mathias Ramilo</h1>
-                        <h3 class="my-data-age card-letters">Age <span id="user-age">21</span></h3>
+                        <h1 class="my-data-username card-letters" id="user-name">Name Lastname</h1>
+                        <h3 class="my-data-age card-letters">Age <span id="user-age">--</span></h3>
                     </div>
                 </div>
                 <div class="data-card-info data-card-info-my-data">
-                    <p class="card-letters">Gender: <span class="user-gender" id="user-gender">Male</span></p>
-                    <p class="card-letters">Height: <span class="user-height" id="user-height">1.83 m</span></p>
-                    <p class="card-letters">Weight: <span class="user-weight" id="user-weight">79.2 kg</span></p>
+                    <p class="card-letters">Gender: <span class="user-gender" id="user-gender">----</span></p>
+                    <p class="card-letters">Height: <span class="user-height" id="user-height">-- m</span></p>
+                    <p class="card-letters">Weight: <span class="user-weight" id="user-weight">-- kg</span></p>
                 </div>
                 <hr class="my-data-hr">
                 <button class="button change-data-button">Change Data</button>
@@ -132,14 +132,14 @@
             <section class="bmi-recomendations">
                 <div class="data-card-bmi">
                     <h2 class="card-letters">Body Mass Index (BMI):</h2>
-                    <h3 class="card-letters"><span class="user-bmi" id="user-bmi">23.6</span> <span class="bmi-level" id="bmi-level">Normal</span></h3>
+                    <h3 class="card-letters"><span class="user-bmi" id="user-bmi">--</span> <span class="bmi-level" id="bmi-level">---</span></h3>
                 </div>
-                <p id="bmi-description" class="card-letters">Your weight is within normal levels given your height congratulations.</p>
+                <p id="bmi-description" class="card-letters">------------</p>
                 <div class="my-data-recomendations">
                     <h3>Recomendations:</h3>
-                    <div class="bmi-recomendations-list">
-                        <p class="card-letters">1. Remember to exercise at least 3 times a week</p>
-                        <p class="card-letters">2. Try to maintain a healthy diet</p>
+                    <div id="bmi-recomendations-list" class="bmi-recomendations-list">
+                        <p class="card-letters">------</p>
+                        <p class="card-letters">------</p>
                     </div>
                 </div>
             </section>
@@ -185,5 +185,6 @@
     
     <!-- My JS -->
     <script src="../src/js/app.js" type="module"></script>
+    <script src="../src/js/my-data.js" type="module"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Modal Routine -->
-    <section class="routine-modal-container modal-routine">
+    <section id="routine-modal" class="routine-modal-container modal-routine">
         <section class="routine-modal">
             <div class="routine-modal-title">
                 <div class="logo">
@@ -22,14 +22,14 @@
                 <h2>Enter The Data</h2>
             </div>
 
-            <form class="routine-modal-form">
-                <p>Fill all fields *</p>
+            <div class="routine-modal-form">
+                <p id="fill-all-fields">Fill all fields *</p>
                 <div class="field">
-                    <label for="days">How many days per week can you train? <span>(2 - 5)</span></label>
+                    <label for="days">How many days per week can you train? <span id="days-alert">(2 - 5)</span></label>
                     <input type="number" id="days" name="days" autocomplete="off">
                 </div>
-                <input id="routine-submit" class="button button-routine-modal" type="submit" value="Give Me My Routine!">
-            </form>
+                <button id="routine-submit" class="button button-routine-modal">Give Me My Routine!</button>
+            </div>
 
             <p class="registered-trademark">© 2021 Fit Teammate</p>
         </section>
@@ -83,37 +83,37 @@
                     <h2 class="card-letters">Custom Routine</h2>
                 </div>
                 <div class="rmd-data">
-                    <p class="card-letters">Gender: <span class="user-gender" id="user-gender">Male</span></p>
-                    <p class="card-letters">Body Mass Index (BMI): <span class="user-bmi" id="user-bmi">23.6</span></p>
-                    <p class="card-letters">Training days per week: <span class="user-tdw" id="user-tdw">3</span></p>
+                    <p class="card-letters">Gender: <span class="user-gender" id="user-gender">----</span></p>
+                    <p class="card-letters">Body Mass Index (BMI): <span class="user-bmi" id="user-bmi">--</span></p>
+                    <p class="card-letters">Training days per week: <span class="user-tdw" id="user-tdw">--</span></p>
                 </div>
-                <button class="button button-change-tdw">Change Data</button>
+                <button id="button-change-tdw" class="button button-change-tdw">Change Data</button>
             </section>
-
+            
             <section class="custom-routine">
                 <div class="training-plan-grid">
                     <div class="training-day-card">
-                        <h3 class="card-letters">Day 1</h3>
+                        <h3 class="card-letters">Day --</h3>
                         <div class="tdc-plan">
-                            <p class="card-letters">1. Chest & Triceps</p>
-                            <p class="card-letters">2. Core & Abs 15 min</p>
-                            <p class="card-letters">3. Run 10 min</p>
+                            <p class="card-letters">1. -----</p>
+                            <p class="card-letters">2. -----</p>
+                            <p class="card-letters">3. -----</p>
                         </div>
                     </div>
                     <div class="training-day-card">
-                        <h3 class="card-letters">Day 2</h3>
+                        <h3 class="card-letters">Day --</h3>
                         <div class="tdc-plan">
-                            <p class="card-letters">1. Back & Biceps</p>
-                            <p class="card-letters">2. Core & Abs 15 min</p>
-                            <p class="card-letters">3. Run 10 min</p>
+                            <p class="card-letters">1. -----</p>
+                            <p class="card-letters">2. -----</p>
+                            <p class="card-letters">3. -----</p>
                         </div>
                     </div>
                     <div class="training-day-card">
-                        <h3 class="card-letters">Day 3</h3>
+                        <h3 class="card-letters">Day --</h3>
                         <div class="tdc-plan">
-                            <p class="card-letters">1. Legs & Shoulders</p>
-                            <p class="card-letters">2. Core & Abs 15 min</p>
-                            <p class="card-letters">3. Run 10 min</p>
+                            <p class="card-letters">1. -----</p>
+                            <p class="card-letters">2. -----</p>
+                            <p class="card-letters">3. -----</p>
                         </div>
                     </div>
                 </div>
@@ -166,5 +166,6 @@
     </footer>
 
     <script src="../src/js/app.js" type="module"></script>
+    <script src="../src/js/routine.js" type="module"></script>
 </body>
 </html>

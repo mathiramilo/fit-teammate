@@ -811,8 +811,6 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  pointer-events: none;
   transition: all 0.3s ease; }
 
 .routine-modal {
