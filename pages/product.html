@@ -25,6 +25,85 @@
         <a href="./shop-home.html" class="navbar-link navbar-link-modal">Shop</a>
     </section>
 
+    <!-- Shopping Cart Overlay -->
+    <aside id="cart-overlay" class="cart-overlay">
+        <div class="cart-title">
+            <svg id="close-cart-button" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+            <h2>Your Cart</h2>
+        </div>
+
+        <div id="cart-products" class="cart-products">
+            <div class="cart-product-card">
+                <div class="cpc-image">
+                    <picture>
+                        <source srcset="../assets/images/images/products/machine-chest.webp" type="image/webp">
+                        <img src="../assets/images/images/products/machine-chest.png" alt="Chest Bench">
+                    </picture>
+                </div> 
+
+                <div class="cpc-data">
+                    <h3 id="cpc-name">Chest Bench</h3>
+                    <p class="cpc-price">US$ <span id="product-price">145</span></p>
+                    <div class="cpc-amount">
+                        <button id="sub-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"/></svg></button>
+                        <span id="product-amount">1</span>
+                        <button id="plus-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg></button>
+                    </div>
+                </div>
+
+                <button id="delete-product"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                </svg></button>
+
+                <p class="total-product-price">US$ <span id="total-product-price">145</span></p>
+            </div>
+        </div>
+
+        <div class="cart-resume">
+            <p class="cr-amount">Amount: <span id="cart-amount">4</span></p>
+
+            <div class="cr-price-detailed">
+                <div class="crpd-part">
+                    <p>Subtotal</p>
+                    <p>US$ <span id="cart-subtotal">704.00</span></p>
+                </div>
+                <div class="crpd-part">
+                    <p>Vat(12%)</p>
+                    <p>US$ <span id="cart-subtotal">84.48</span></p>
+                </div>
+                <div class="crpd-part">
+                    <div class="crpdp-shipping-title">
+                        <p>Shipping</p>
+                        <svg class="shipping-info-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                    </div>
+                    <p>US$ <span id="cart-shipping">50.00</span></p>
+                </div>
+
+                <div class="cr-total">
+                    <p>Total</p>
+                    <p>US$ <span id="cart-total">838.48</span></p>
+                </div>
+            </div>
+
+            <button id="finish-buying-button" class="button finish-buying-button">Finish Buying</button>
+        </div>
+    </aside>
+
+    <!-- Empty Cart Toast -->
+    <section id="empty-cart-toast" class="empty-cart-toast">
+        <div class="ect-title">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <h3>Your Cart Is Empty</h3>
+        </div>
+        <p>Add some products to your cart!</p>
+    </section>
+
     <section class="main-section main-section-product">
         <header class="header">
             <!-- Violet Bar at top of the page -->
@@ -51,9 +130,9 @@
 
         <section class="product-main-content">
             <div class="product-path">
-                <a href="./shop.html">Shop</a>
+                <a id="redirect-shop" href="./shop.html">Shop</a>
                 <p>/</p>
-                <p>Chest Bench</p>
+                <p id="path-product-name"></p>
             </div>
 
             <div class="product-principal-grid">
@@ -64,19 +143,19 @@
                     </picture>
                 </div>
                 <div class="ppg-info">
-                    <h1 class="card-letters">Chest Bench</h1>
-                    <h2>US$ <span id="product-price">145</span></h2>
+                    <h1 id="product-name" class="card-letters"></h1>
+                    <h2>US$ <span id="product-price"></span></h2>
 
                     <hr class="product-hr">
 
                     <div class="product-description">
                         <h2 class="card-letters">Description</h2>
-                        <p class="card-letters">Multifunctional bench that allows various levels of training, It has 3 different inclinations, inclined and reclines planes. Ideal for strengthhening chest, legs, shoulders and arms.</p>
+                        <p id="product-description" class="card-letters"></p>
                     </div>
 
                     <div class="product-dimensions">
                         <h2 class="card-letters">Dimensions</h2>
-                        <p class="card-letters">170 cm x 107 cm x 66.5 cm</p>
+                        <p id="product-dimensions" class="card-letters"></p>
                     </div>
 
                     <button class="button button-add-to-cart">
@@ -139,5 +218,6 @@
 
     <script src="../src/js/app.js" type="module"></script>
     <script src="../src/js/product.js" type="module"></script>
+    <script src="../src/js/cart.js" type="module"></script>
 </body>
 </html>

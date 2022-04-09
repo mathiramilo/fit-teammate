@@ -1,23 +1,35 @@
 // Object that represents a Shopping Cart
 
 export default class ShoppingCart {
-    // Shopping Cart has a list of Products
+    // Shopping Cart has a list of Products (Product - Quantity)
     constructor(products) {
         this.products = products;
     }
 
     // Method that adds a Product to the Shopping Cart
     addProduct(product) {
-        this.products.push(product);
+        if (!this.isProduct(product)) {
+            this.products.push(product);
+        }
+        this.getProduct(product.id).cartQuantity++;
     }
 
     // Method that removes a Product from the Shopping Cart
     removeProduct(product) {
-        for (let prod of this.products) {
-            if (prod.id === product.id) {
+        this.getProduct(product.id).cartQuantity--;
 
-            }
-        }
+        let productIndex = this.products.indexOf(product);
+        this.products.splice(productIndex, 1);
+    }
+
+    // Method that checks if a product is in the Shopping Cart
+    isProduct(product) {
+        return this.products.includes(product);
+    }
+
+    // Method that returns the product with id = "id"
+    getProduct(id) {
+        return this.products.find(element => element.id == id);
     }
 
     // Method that returns the quantity of a item in the Shopping Cart
@@ -32,12 +44,12 @@ export default class ShoppingCart {
     }
 
     // Method that returns the quantity of items in the Shopping Cart
-    lenght() {
-        let lenght = 0;
+    length() {
+        let length = 0;
         for (let prod of this.products) {
-            lenght++;
+            length++;
         }
-        return lenght;
+        return length;
     }
 
     // Method that returns the subtotal cost of the Shopping Cart

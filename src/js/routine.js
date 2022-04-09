@@ -1,12 +1,30 @@
 // Import Modules
 import User from "./classes/User.js";
 
+import {darkMode, brightMode} from "./app.js"
+
 
 // Get User Data from Storage
 let user = new User("", "", "", "", "", "", "");
 
+if (sessionStorage.getItem('user')) {
+    let ssUser = JSON.parse(sessionStorage.getItem('user'));
+
+    for (let property in ssUser) {
+        user[property] = ssUser[property];
+    }
+} 
+
+showRoutineData();
+
 // Routine Modal
 const routineModal = document.getElementById('routine-modal');
+
+if (user.tdw == "") {
+    routineModal.style.opacity = 1;
+    routineModal.style.pointerEvents = "all";
+}
+
 if (!!routineModal) {
     const changeTDW = document.getElementById('button-change-tdw');
     changeTDW.addEventListener('click', () => {
@@ -39,6 +57,8 @@ function routineDataValidation() {
             }, 1000);
         } else {
             user['tdw'] = tdw;
+            sessionStorage.setItem('user', JSON.stringify(user));
+
             showRoutineData();
 
             // The modal disappears
@@ -76,6 +96,8 @@ function showRoutineData() {
     }
 
     userTDW.innerHTML = `${user.tdw}`;
+
+    userBmi.innerHTML = `${user.calculateBMI()}`;
 
     if (user.calculateBMI() < 18.5) {
         // Low
@@ -218,5 +240,12 @@ function showRoutineData() {
                 <p class="card-letters">3. Run 10 min</p>
             </div>
         </div>`
+    }
+
+    let theme = sessionStorage.getItem('theme');
+    if (theme == "bright") {
+        brightMode();
+    } else {
+        darkMode();
     }
 }

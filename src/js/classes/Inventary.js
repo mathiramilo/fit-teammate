@@ -18,15 +18,20 @@ export default class Inventary {
         return this.products.includes(product);
     }
 
+    // Method that returns the product with id = "id"
+    getProduct(id) {
+        return this.products.find(element => element.id == id);
+    }
+
     // Method that returns an array with all the products of type equipment
     equipment() {
-        let equipment = this.products.filter(prod => (prod.type == "Machines" || prod.type == "Dumbells" || prod.type == "Weights" || prod.type == "Bars" || prod.type == "Mats"));
+        let equipment = this.products.filter(prod => (prod.type == "machines" || prod.type == "dumbells" || prod.type == "weights" || prod.type == "bars" || prod.type == "mats"));
         return equipment;
     }
 
     // Method that returns an array with all the products of type supplement
     supplements() {
-        let supplements = this.products.filter(prod => (prod.type == "Protein" || prod.type == "Creatine" || prod.type == "Pre-Workout" || prod.type == "BCAAs" || prod.type == "Shakers"));
+        let supplements = this.products.filter(prod => (prod.type == "protein" || prod.type == "creatine" || prod.type == "preworkout" || prod.type == "bcaas" || prod.type == "shaker"));
         return supplements;
     }
 

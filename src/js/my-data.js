@@ -1,9 +1,24 @@
 // Import Modules
 import User from "./classes/User.js";
 
+import {darkMode, brightMode} from "./app.js";
+
 
 // Get User Data from Storage
 let user = new User("", "", "", "", "", "", "");
+
+if (sessionStorage.getItem('user')) {
+    let ssUser = JSON.parse(sessionStorage.getItem('user'));
+
+    for (let property in ssUser) {
+        user[property] = ssUser[property];
+    }
+} 
+
+// Load the Page & Modal
+showUserData();
+loadModal();
+
 
 // Get the necessary elements from the DOM
 const initialDataSubmit = document.getElementById('initial-data-submit');
@@ -140,6 +155,8 @@ function initialDataValidation() {
             user['height'] = height;
             user['weight'] = weight;
 
+            sessionStorage.setItem('user', JSON.stringify(user));
+
             showUserData();
 
             // The modal disappears
@@ -269,6 +286,30 @@ function showUserData() {
             });
         }
     }
+
+    let theme = sessionStorage.getItem('theme');
+    if (theme == "bright") {
+        brightMode();
+    } else {
+        darkMode();
+    }
+}
+
+// Function that loads the modal
+function loadModal() {
+    const name = document.getElementById('name');
+    const lastname = document.getElementById('lastname');
+    const age = document.getElementById('age');
+    const gender = document.getElementById('gender');
+    const height = document.getElementById('height');
+    const weight = document.getElementById('weight');
+
+    name.value = user.name;
+    lastname.value = user.lastname;
+    age.value = user.age;
+    gender.value = user.gender;
+    height.value = user.height;
+    weight.value = user.weight;
 }
 
 

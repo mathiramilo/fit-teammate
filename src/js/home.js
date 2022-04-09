@@ -3,7 +3,19 @@ import User from "./classes/User.js";
 
 
 // 1. Get the user data from the storage or creates the object that represents the user
-let user = new User("", "", "", "", "", "", "");
+let user;
+
+if (sessionStorage.getItem('user')) {
+    let ssUser = JSON.parse(sessionStorage.getItem('user'));
+    user = ssUser;
+    showUserData();
+} else {
+    let newUser = new User("", "", "", "", "", "", "");
+    user = newUser;
+    const initDataModalContainer = document.querySelector('.init-data-modal-container');
+    initDataModalContainer.style.opacity = 1;
+    initDataModalContainer.style.pointerEvents = "all";
+}
 
 // 2. Get the necessary elements from the DOM
 const initialDataSubmit = document.getElementById('initial-data-submit');
@@ -130,6 +142,8 @@ function initialDataValidation() {
             user['height'] = height;
             user['weight'] = weight;
 
+            sessionStorage.setItem('user', JSON.stringify(user));
+
             showUserData();
 
             // The modal disappears
@@ -171,7 +185,7 @@ function showUserData() {
     userAge.innerHTML = `${user.age}`;
     userHeight.innerHTML = `${user.height / 100} m`;
     userWeight.innerHTML = `${user.weight} kg`;
-    userBmi.innerHTML = `${user.calculateBMI()}`;
+    userBmi.innerHTML = `${calculateBMI(user.weight, user.height)}`;
 
     if (!!userGender) {
         userGender.innerHTML = `${user.gender}`
@@ -183,13 +197,13 @@ function showUserData() {
     }
 
     if (!!bmiDescription) {
-        if (user.calculateBMI() < 18.5) {
+        if (calculateBMI(user.weight, user.height) < 18.5) {
             // Low
             bmiDescription.innerHTML = `Your weight is under normal levels given your height, you should gain weight.`;
-        } else if (user.calculateBMI() < 25) {
+        } else if (calculateBMI(user.weight, user.height) < 25) {
             // Normal
             bmiDescription.innerHTML = `Your weight is within normal levels given your height congratulations.`;
-        } else if (user.calculateBMI() < 30) {
+        } else if (calculateBMI(user.weight, user.height) < 30) {
             // High
             bmiDescription.innerHTML = `Your weight is above normal levels given your height, you should lose weight.`;
         } else {
@@ -199,13 +213,13 @@ function showUserData() {
     }
 
     if (!!bmiRecomendationsList) {
-        if (user.calculateBMI() < 18.5) {
+        if (calculateBMI(user.weight, user.height) < 18.5) {
             // Low
             bmiRecomendationsList.innerHTML = `<p class="card-letters">1. Hypertrophy training at least 3 times per week</p><p class="card-letters">2. High calorie diet</p>`;
-        } else if (user.calculateBMI() < 25) {
+        } else if (calculateBMI(user.weight, user.height) < 25) {
             // Normal
             bmiRecomendationsList.innerHTML = `<p class="card-letters">1. Remember to exercise at least 3 times a week</p><p class="card-letters">2. Try to maintain a healthy diet</p>`;
-        } else if (user.calculateBMI() < 30) {
+        } else if (calculateBMI(user.weight, user.height) < 30) {
             // High
             bmiRecomendationsList.innerHTML = `<p class="card-letters">1. Exercise at least 3 times per week and include cardio or HIT training</p><p class="card-letters">2. Low calorie diet</p>`;
         } else {
@@ -214,7 +228,7 @@ function showUserData() {
         }
     }
 
-    if (user.calculateBMI() < 18.5) {
+    if (calculateBMI(user.weight, user.height) < 18.5) {
         // Low
         userBmi.style.color = "#EC9513";
         userBmiLevel.innerHTML = "Low";
@@ -225,7 +239,7 @@ function showUserData() {
                 element.style.color = "#EC9513";
             });
         }
-    } else if (user.calculateBMI() < 25) {
+    } else if (calculateBMI(user.weight, user.height) < 25) {
         // Normal
         userBmi.style.color = "#4FD174";
         userBmiLevel.innerHTML = "Normal";
@@ -236,7 +250,7 @@ function showUserData() {
                 element.style.color = "#4FD174";
             });
         }
-    } else if (user.calculateBMI() < 30) {
+    } else if (calculateBMI(user.weight, user.height) < 30) {
         // High
         userBmi.style.color = "#EC9513";
         userBmiLevel.innerHTML = "High";
@@ -259,6 +273,12 @@ function showUserData() {
             });
         }
     }
+}
+
+
+// Method that calculates and returns the user BMI
+function calculateBMI(weight, height) {
+    return (weight / (Math.pow((height / 100), 2))).toFixed(1);
 }
 
 

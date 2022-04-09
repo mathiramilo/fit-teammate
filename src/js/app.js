@@ -1,10 +1,3 @@
-// Import Modules
-import User from "./classes/User.js";
-import Product from "./classes/Product.js";
-import Inventary from "./classes/Inventary.js";
-import ShoppingCart from "./classes/ShoppingCart.js";
-
-
 // HAMBURGUER MENU
 
 // Show the menu modal
@@ -18,8 +11,22 @@ xButton.addEventListener('click', closeMenu);
 
 // THEMES
 
-// Initialize the variable theme as "bright"
-let theme = "bright";
+// Initialize the variable theme from session storage or as "bright" default
+let theme;
+
+if (sessionStorage.getItem('theme')) {
+    let ssTheme = sessionStorage.getItem('theme');
+    theme = ssTheme;
+} else {
+    theme = "bright";
+}
+
+// Charge the page with the theme
+if (theme == "bright") {
+    brightMode();
+} else {
+    darkMode();
+}
 
 // Get the Dark Mode button
 const darkModeButton = document.querySelector('.dark-mode');
@@ -58,8 +65,9 @@ function closeMenu() {
 // Themes
 
 // Function Dark Mode
-function darkMode() {
-    theme = "dark";
+export function darkMode() {
+    let newTheme = "dark";
+    sessionStorage.setItem('theme', newTheme);
 
     document.body.style.backgroundColor = "#030303";
 
@@ -191,15 +199,21 @@ function darkMode() {
         const buttonATC = document.querySelector('.button-add-to-cart');
         const atcLetters = document.querySelector('.atc-letters'); 
         const prodCartIcon = document.querySelector('.prod-cart-icon');
-        buttonATC.style.backgroundColor = "#FCFCFC";
-        atcLetters.style.color = "#252525";
-        prodCartIcon.style.fill = "#252525";
+        buttonATC.style.backgroundColor = "#262626";
+        atcLetters.style.color = "#F4F4F4";
+        prodCartIcon.style.fill = "#F4F4F4";
+    }
+
+    if (!!document.getElementById('no-products-icon')) {
+        const noProductsIcon = document.getElementById('no-products-icon');
+        noProductsIcon.style.fill = "#FFFFFF";
     }
 }
 
 // Function Bright Mode
-function brightMode() {
-    theme = "bright";
+export function brightMode() {
+    let newTheme = "bright";
+    sessionStorage.setItem('theme', newTheme);
 
     document.body.style.backgroundColor = "#FFFFFF";
 
@@ -340,5 +354,10 @@ function brightMode() {
         buttonATC.style.backgroundColor = "#161616";
         atcLetters.style.color = "#FFFFFF";
         prodCartIcon.style.fill = "#FFFFFF";
+    }
+
+    if (!!document.getElementById('no-products-icon')) {
+        const noProductsIcon = document.getElementById('no-products-icon');
+        noProductsIcon.style.fill = "#161616";
     }
 }
