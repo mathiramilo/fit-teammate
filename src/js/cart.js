@@ -40,26 +40,20 @@ if (sessionStorage.getItem('cart')) {
 
 let cb = inventary.getProduct(1);
 cart.addProduct(cb);
+cart.addProduct(cb);
+cart.addProduct(cb);
+cart.addProduct(cb);
+cart.addProduct(cb);
+
+let wp = inventary.getProduct(21);
+cart.addProduct(wp);
+
+let crea = inventary.getProduct(25);
+cart.addProduct(crea);
+
 
 // Cart Charge Data
-const cartProductList = document.getElementById('cart-products');
-let cartProductsInnerHTML = cartProducts(cart.products);
-cartProductList.innerHTML = cartProductsInnerHTML;
-
-const cartAmount = document.getElementById('cart-amount');
-cartAmount.innerHTML = `${cart.products.length}`;
-
-const cartSubtotal = document.getElementById('cart-subtotal');
-cartSubtotal.innerHTML = `${cart.subtotal()}`;
-
-const cartVat = document.getElementById('cart-vat');
-cartVat.innerHTML = `${cart.calculateVAT()}`;
-
-const cartShipping = document.getElementById('cart-shipping');
-cartShipping.innerHTML = `${cart.shipping()}`;
-
-const cartTotal = document.getElementById('cart-total');
-cartTotal.innerHTML = `${cart.total()}`;
+cartLoadData();
 
 
 // Open Cart
@@ -88,4 +82,98 @@ cartButton.addEventListener('click', () => {
 const closeCartButton = document.getElementById('close-cart-button');
 closeCartButton.onclick = () => {
     cartOverlay.style.transform = "translateX(460px)";
+}
+
+
+// Add Decrease product quantity buttons
+const subButton = document.querySelectorAll('#sub-button');
+const plusButton = document.querySelectorAll('#plus-button');
+
+subButton.forEach((element) => {
+    element.onclick = (e) => {
+        let product = e.target.parentNode;
+        let elementId = product.getAttribute('id');
+        let productId = elementId.substring(11);
+        
+        let prod = inventary.getProduct(productId);
+        prod.cartQuantity--;
+
+        const productAmount = e.target.nextSibling.nextSibling;
+        productAmount.innerHTML = `${prod.cartQuantity}`;
+
+        const productTotalPrice = e.target.parentNode.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.lastChild;
+        productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
+
+        if (prod.cartQuantity == 0) {
+            const productCard = e.target.parentNode.parentNode.parentNode;
+            productCard.remove();
+            cart.removeProduct(prod);
+        }
+
+        cartUpdateData();
+
+        if (cart.products.length == 0) {
+            cartOverlay.style.transform = "translateX(460px)";
+        }
+    }
+});
+
+plusButton.forEach((element) => {
+    element.onclick = (e) => {
+        let product = e.target.parentNode;
+        let elementId = product.getAttribute('id');
+        let productId = elementId.substring(11);
+        
+        let prod = inventary.getProduct(productId);
+        prod.cartQuantity++;
+
+        const productAmount = e.target.previousSibling.previousSibling;
+        productAmount.innerHTML = `${prod.cartQuantity}`;
+
+        const productTotalPrice = e.target.parentNode.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.lastChild;
+        productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
+
+        cartUpdateData();
+    }
+});
+
+
+// Function that loads the data in the cart
+function cartLoadData() {
+    const cartProductList = document.getElementById('cart-products');
+    let cartProductsInnerHTML = cartProducts(cart.products);
+    cartProductList.innerHTML = cartProductsInnerHTML;
+    
+    const cartAmount = document.getElementById('cart-amount');
+    cartAmount.innerHTML = `${cart.productsAmount()}`;
+    
+    const cartSubtotal = document.getElementById('cart-subtotal');
+    cartSubtotal.innerHTML = `${cart.subtotal()}`;
+    
+    const cartVat = document.getElementById('cart-vat');
+    cartVat.innerHTML = `${cart.calculateVAT()}`;
+    
+    const cartShipping = document.getElementById('cart-shipping');
+    cartShipping.innerHTML = `${cart.shipping()}`;
+    
+    const cartTotal = document.getElementById('cart-total');
+    cartTotal.innerHTML = `${cart.total()}`;
+}
+
+// Function that updates the data in the cart
+function cartUpdateData() {
+    const cartAmount = document.getElementById('cart-amount');
+    cartAmount.innerHTML = `${cart.productsAmount()}`;
+    
+    const cartSubtotal = document.getElementById('cart-subtotal');
+    cartSubtotal.innerHTML = `${cart.subtotal()}`;
+    
+    const cartVat = document.getElementById('cart-vat');
+    cartVat.innerHTML = `${cart.calculateVAT()}`;
+    
+    const cartShipping = document.getElementById('cart-shipping');
+    cartShipping.innerHTML = `${cart.shipping()}`;
+    
+    const cartTotal = document.getElementById('cart-total');
+    cartTotal.innerHTML = `${cart.total()}`;
 }

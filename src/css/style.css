@@ -378,7 +378,8 @@ button:hover {
       font-size: 1.4rem; }
       .cpc-data .cpc-amount button svg {
         width: 10px;
-        fill: #161616; }
+        fill: #161616;
+        pointer-events: none; }
     .cpc-data .cpc-amount span {
       font-size: 1.1rem;
       color: #161616; }

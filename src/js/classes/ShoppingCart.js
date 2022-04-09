@@ -33,19 +33,19 @@ export default class ShoppingCart {
     }
 
     // Method that returns the quantity of items in the Shopping Cart
-    length() {
-        let length = 0;
+    productsAmount() {
+        let amount = 0;
         for (let prod of this.products) {
-            length++;
+            amount += prod.cartQuantity;
         }
-        return length;
+        return amount;
     }
 
     // Method that returns the subtotal cost of the Shopping Cart
     subtotal() {
         let subtotal = 0;
         for (let prod of this.products) {
-            subtotal += prod.price;
+            subtotal += prod.price * prod.cartQuantity;
         }
         return subtotal;
     }
@@ -68,7 +68,7 @@ export default class ShoppingCart {
 
     // Method that calculates and returns the total cost of the cart
     total() {
-        return this.subtotal() + this.calculateVAT() + this.shipping();
+        return (this.subtotal() + this.calculateVAT() + this.shipping()).toFixed(2);
     }
 
     // Method for checkout
