@@ -32,17 +32,6 @@ export default class ShoppingCart {
         return this.products.find(element => element.id == id);
     }
 
-    // Method that returns the quantity of a item in the Shopping Cart
-    productQuantity(product) {
-        let quantity = 0;
-        for (let prod of this.products) {
-            if (prod.id === product.id) {
-                quantity++;
-            }
-        }
-        return quantity;
-    }
-
     // Method that returns the quantity of items in the Shopping Cart
     length() {
         let length = 0;
@@ -63,7 +52,7 @@ export default class ShoppingCart {
 
     // Method that calculates the VAT of the Shopping Cart
     calculateVAT() {
-        let subtotal = this.subtotalCost();
+        let subtotal = this.subtotal();
         let vat = parseFloat((subtotal * 0.12).toFixed(2));
         return vat;
     }
