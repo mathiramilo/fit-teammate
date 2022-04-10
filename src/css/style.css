@@ -391,7 +391,8 @@ button:hover {
   border: none;
   background-color: transparent; }
   #delete-product svg {
-    width: 16px; }
+    width: 16px;
+    pointer-events: none; }
 
 .total-product-price {
   position: absolute;

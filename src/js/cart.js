@@ -138,6 +138,37 @@ plusButton.forEach((element) => {
 });
 
 
+// Delete product from cart
+const deleteProductButton = document.querySelectorAll('#delete-product');
+deleteProductButton.forEach((element) => {
+    element.onclick = (e) => {
+        let product = e.target;
+        let elementClass = product.getAttribute('class');
+
+        let productId = elementClass.substring(3);
+    
+        let prod = inventary.getProduct(productId);
+        prod.cartQuantity = 0;
+
+        const productAmount = e.target.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling;
+        productAmount.innerHTML = `${prod.cartQuantity}`;
+
+        const productTotalPrice = e.target.nextElementSibling.firstElementChild;
+        productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
+
+        const productCard = e.target.parentNode;
+        productCard.remove();
+        cart.removeProduct(prod);
+
+        cartUpdateData();
+
+        if (cart.products.length == 0) {
+            cartOverlay.style.transform = "translateX(460px)";
+        }
+    }
+});
+
+
 // Function that loads the data in the cart
 function cartLoadData() {
     const cartProductList = document.getElementById('cart-products');
