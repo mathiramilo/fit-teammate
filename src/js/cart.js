@@ -38,19 +38,6 @@ if (sessionStorage.getItem('cart')) {
     sessionStorage.setItem('cart', "");
 }
 
-let cb = inventary.getProduct(1);
-cart.addProduct(cb);
-cart.addProduct(cb);
-cart.addProduct(cb);
-cart.addProduct(cb);
-cart.addProduct(cb);
-
-let wp = inventary.getProduct(21);
-cart.addProduct(wp);
-
-let crea = inventary.getProduct(25);
-cart.addProduct(crea);
-
 
 // Cart Charge Data
 cartLoadData();
@@ -115,6 +102,8 @@ subButton.forEach((element) => {
         if (cart.products.length == 0) {
             cartOverlay.style.transform = "translateX(460px)";
         }
+
+        sessionStorage.setItem('cart', JSON.stringify(cart.products));
     }
 });
 
@@ -134,6 +123,8 @@ plusButton.forEach((element) => {
         productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
 
         cartUpdateData();
+
+        sessionStorage.setItem('cart', JSON.stringify(cart.products));
     }
 });
 
@@ -165,6 +156,8 @@ deleteProductButton.forEach((element) => {
         if (cart.products.length == 0) {
             cartOverlay.style.transform = "translateX(460px)";
         }
+
+        sessionStorage.setItem('cart', JSON.stringify(cart.products));
     }
 });
 
@@ -189,10 +182,17 @@ function cartLoadData() {
     
     const cartTotal = document.getElementById('cart-total');
     cartTotal.innerHTML = `${cart.total()}`;
+
+    const itemQuantityAlert = document.getElementById('cart-items-quantity');
+    itemQuantityAlert.innerHTML = `${cart.productsAmount()}`;
 }
 
 // Function that updates the data in the cart
-function cartUpdateData() {
+export function cartUpdateData() {
+    const cartProductList = document.getElementById('cart-products');
+    let cartProductsInnerHTML = cartProducts(cart.products);
+    cartProductList.innerHTML = cartProductsInnerHTML;
+
     const cartAmount = document.getElementById('cart-amount');
     cartAmount.innerHTML = `${cart.productsAmount()}`;
     
@@ -207,4 +207,7 @@ function cartUpdateData() {
     
     const cartTotal = document.getElementById('cart-total');
     cartTotal.innerHTML = `${cart.total()}`;
+
+    const itemQuantityAlert = document.getElementById('cart-items-quantity');
+    itemQuantityAlert.innerHTML = `${cart.productsAmount()}`;
 }
