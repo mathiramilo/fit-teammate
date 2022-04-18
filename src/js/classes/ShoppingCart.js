@@ -16,7 +16,7 @@ export default class ShoppingCart {
 
     // Method that removes a Product from the Shopping Cart
     removeProduct(product) {
-        this.getProduct(product.id).cartQuantity--;
+        this.getProduct(product.id).cartQuantity = 0;
 
         let productIndex = this.products.indexOf(product);
         this.products.splice(productIndex, 1);
@@ -24,7 +24,8 @@ export default class ShoppingCart {
 
     // Method that checks if a product is in the Shopping Cart
     isProduct(product) {
-        return this.products.includes(product);
+        let mapped = this.products.map(element => element.id);
+        return mapped.includes(product.id);
     }
 
     // Method that returns the product with id = "id"

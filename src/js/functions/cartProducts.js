@@ -4,7 +4,7 @@ export default function cartProducts(productList) {
 
     productList.forEach(element => {
         cartInnerHTML += `
-        <div class="cart-product-card">
+            <div class="cart-product-card">
                 <div class="cpc-image">
                     <picture>
                         <source srcset="../assets/images/images/products/${element.img}.webp" type="image/webp">

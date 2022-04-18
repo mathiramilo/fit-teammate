@@ -40,8 +40,8 @@
 }
 
 .cart-products {
-    display: grid;
-    grid-template-columns: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 1em;
     overflow-y: scroll;
     height: auto;

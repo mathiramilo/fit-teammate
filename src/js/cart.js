@@ -1,11 +1,10 @@
 // Import Modules
-import Product from "./classes/Product.js";
 import Inventary from "./classes/Inventary.js";
 import ShoppingCart from "./classes/ShoppingCart.js";
 
 import cartProducts from "./functions/cartProducts.js";
 
-import {darkMode, brightMode} from "./app.js"
+import {darkMode, brightMode} from "./app.js";
 
 
 // The object Inventary contains an array of all the prodcuts
@@ -35,7 +34,7 @@ if (sessionStorage.getItem('cart')) {
     cart['products'] = sessionStorageCart;
 } else {
     // Set empty cart in session storage
-    sessionStorage.setItem('cart', "");
+    sessionStorage.setItem('cart', JSON.stringify(cart.products));
 }
 
 
@@ -72,94 +71,29 @@ closeCartButton.onclick = () => {
 }
 
 
-// Add Decrease product quantity buttons
-const subButton = document.querySelectorAll('#sub-button');
-const plusButton = document.querySelectorAll('#plus-button');
+// Functionality for product card buttons
+productCardButtons();
 
-subButton.forEach((element) => {
-    element.onclick = (e) => {
-        let product = e.target.parentNode;
-        let elementId = product.getAttribute('id');
-        let productId = elementId.substring(11);
-        
-        let prod = inventary.getProduct(productId);
-        prod.cartQuantity--;
 
-        const productAmount = e.target.nextSibling.nextSibling;
-        productAmount.innerHTML = `${prod.cartQuantity}`;
+// Button Add to Cart (In product page)
+const addToCartButton = document.querySelector('.button-add-to-cart');
 
-        const productTotalPrice = e.target.parentNode.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.lastChild;
-        productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
+if (addToCartButton) {
+    addToCartButton.onclick = () => {
+        let elementId = addToCartButton.getAttribute('id');
+        let productId = elementId.substring(19);
 
-        if (prod.cartQuantity == 0) {
-            const productCard = e.target.parentNode.parentNode.parentNode;
-            productCard.remove();
-            cart.removeProduct(prod);
-        }
+        let product = inventary.getProduct(productId);
+        cart.addProduct(product);
 
-        cartUpdateData();
+        cartOverlay.style.transform = "translateX(0)";
 
-        if (cart.products.length == 0) {
-            cartOverlay.style.transform = "translateX(460px)";
-        }
+        cartLoadData();
 
         sessionStorage.setItem('cart', JSON.stringify(cart.products));
     }
-});
+}
 
-plusButton.forEach((element) => {
-    element.onclick = (e) => {
-        let product = e.target.parentNode;
-        let elementId = product.getAttribute('id');
-        let productId = elementId.substring(11);
-        
-        let prod = inventary.getProduct(productId);
-        prod.cartQuantity++;
-
-        const productAmount = e.target.previousSibling.previousSibling;
-        productAmount.innerHTML = `${prod.cartQuantity}`;
-
-        const productTotalPrice = e.target.parentNode.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.lastChild;
-        productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
-
-        cartUpdateData();
-
-        sessionStorage.setItem('cart', JSON.stringify(cart.products));
-    }
-});
-
-
-// Delete product from cart
-const deleteProductButton = document.querySelectorAll('#delete-product');
-deleteProductButton.forEach((element) => {
-    element.onclick = (e) => {
-        let product = e.target;
-        let elementClass = product.getAttribute('class');
-
-        let productId = elementClass.substring(3);
-    
-        let prod = inventary.getProduct(productId);
-        prod.cartQuantity = 0;
-
-        const productAmount = e.target.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling;
-        productAmount.innerHTML = `${prod.cartQuantity}`;
-
-        const productTotalPrice = e.target.nextElementSibling.firstElementChild;
-        productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
-
-        const productCard = e.target.parentNode;
-        productCard.remove();
-        cart.removeProduct(prod);
-
-        cartUpdateData();
-
-        if (cart.products.length == 0) {
-            cartOverlay.style.transform = "translateX(460px)";
-        }
-
-        sessionStorage.setItem('cart', JSON.stringify(cart.products));
-    }
-});
 
 
 // Function that loads the data in the cart
@@ -185,14 +119,12 @@ function cartLoadData() {
 
     const itemQuantityAlert = document.getElementById('cart-items-quantity');
     itemQuantityAlert.innerHTML = `${cart.productsAmount()}`;
+
+    productCardButtons();
 }
 
 // Function that updates the data in the cart
-export function cartUpdateData() {
-    const cartProductList = document.getElementById('cart-products');
-    let cartProductsInnerHTML = cartProducts(cart.products);
-    cartProductList.innerHTML = cartProductsInnerHTML;
-
+function cartUpdateData() {
     const cartAmount = document.getElementById('cart-amount');
     cartAmount.innerHTML = `${cart.productsAmount()}`;
     
@@ -210,4 +142,96 @@ export function cartUpdateData() {
 
     const itemQuantityAlert = document.getElementById('cart-items-quantity');
     itemQuantityAlert.innerHTML = `${cart.productsAmount()}`;
+}
+
+// Function for product card buttons
+function productCardButtons() {
+    // Add Decrease product quantity buttons
+    const subButton = document.querySelectorAll('#sub-button');
+    const plusButton = document.querySelectorAll('#plus-button');
+
+    subButton.forEach((element) => {
+        element.onclick = (e) => {
+            let product = e.target.parentNode;
+            let elementId = product.getAttribute('id');
+            let productId = elementId.substring(11);
+            
+            let prod = cart.getProduct(productId);
+            prod.cartQuantity--;
+
+            const productAmount = e.target.nextSibling.nextSibling;
+            productAmount.innerHTML = `${prod.cartQuantity}`;
+
+            const productTotalPrice = e.target.parentNode.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.lastChild;
+            productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
+
+            if (prod.cartQuantity == 0) {
+                const productCard = e.target.parentNode.parentNode.parentNode;
+                productCard.remove();
+                cart.removeProduct(prod);
+            }
+
+            cartUpdateData();
+
+            if (cart.products.length == 0) {
+                cartOverlay.style.transform = "translateX(460px)";
+            }
+
+            sessionStorage.setItem('cart', JSON.stringify(cart.products));
+        }
+    });
+
+    plusButton.forEach((element) => {
+        element.onclick = (e) => {
+            let product = e.target.parentNode;
+            let elementId = product.getAttribute('id');
+            let productId = elementId.substring(11);
+            
+            let prod = cart.getProduct(productId);
+            cart.addProduct(prod);
+
+            const productAmount = e.target.previousSibling.previousSibling;
+            productAmount.innerHTML = `${prod.cartQuantity}`;
+
+            const productTotalPrice = e.target.parentNode.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.lastChild;
+            productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
+
+            cartUpdateData();
+
+            sessionStorage.setItem('cart', JSON.stringify(cart.products));
+        }
+    });
+
+
+    // Delete product from cart
+    const deleteProductButton = document.querySelectorAll('#delete-product');
+    deleteProductButton.forEach((element) => {
+        element.onclick = (e) => {
+            let product = e.target;
+            let elementClass = product.getAttribute('class');
+
+            let productId = elementClass.substring(3);
+        
+            let prod = cart.getProduct(productId);
+            prod.cartQuantity = 0;
+
+            const productAmount = e.target.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling;
+            productAmount.innerHTML = `${prod.cartQuantity}`;
+
+            const productTotalPrice = e.target.nextElementSibling.firstElementChild;
+            productTotalPrice.innerHTML = `${prod.cartQuantity * prod.price}`;
+
+            const productCard = e.target.parentNode;
+            productCard.remove();
+            cart.removeProduct(prod);
+
+            cartUpdateData();
+
+            if (cart.products.length == 0) {
+                cartOverlay.style.transform = "translateX(460px)";
+            }
+
+            sessionStorage.setItem('cart', JSON.stringify(cart.products));
+        }
+    });
 }
