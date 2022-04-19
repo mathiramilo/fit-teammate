@@ -8,9 +8,7 @@ export default class Inventary {
 
     // Method that adds a product to the Inventary
     addProduct(product) {
-        if (!this.isProduct(product)) {
-            this.products.push(product);
-        }
+        if (!this.isProduct(product)) this.products.push(product);
     }
 
     // Method that checks if a product is in the Inventary

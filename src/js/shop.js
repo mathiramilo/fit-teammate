@@ -9,18 +9,8 @@ import {darkMode, brightMode} from "./app.js"
 
 // The object Inventary contains an array of all the prodcuts
 let inventary = new Inventary([]);
-
 // Verifies if Inventary is in Session Storage
-if (sessionStorage.getItem('inventary')) {
-    // The inventary is stored in Session Storage
-    let sessionStorageInventaryString = sessionStorage.getItem('inventary');
-    let sessionStorageInventary = JSON.parse(sessionStorageInventaryString);
-    inventary['products'] = sessionStorageInventary;
-} else {
-    // Create Inventary
-    let productList = createInventary();
-    inventary['products'] = productList;
-}
+inventary['products'] = JSON.parse(sessionStorage.getItem('inventary')) || createInventary();
 
 
 // LOAD THE SHOP
@@ -160,11 +150,7 @@ categorySelect.addEventListener('change', () => {
         priceFilter();
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     
     } else if (value == "supplements") {
         let supplements = inventary.supplements();
@@ -201,11 +187,7 @@ categorySelect.addEventListener('change', () => {
         priceFilter();
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     }
 });
 
@@ -221,11 +203,7 @@ orderBy.addEventListener('change', () => {
         productsGrid.innerHTML = shopInnerHTML;
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     } else if (value == "a-z") {
         // Order from a to z
         productsShown.sort((a, b) => (a.name < b.name) ? -1 : 1);
@@ -234,11 +212,7 @@ orderBy.addEventListener('change', () => {
         productsGrid.innerHTML = shopInnerHTML;
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     } else if (value == "z-a") {
         // Order from z to a
         productsShown.sort((a, b) => (a.name > b.name) ? -1 : 1);
@@ -247,11 +221,7 @@ orderBy.addEventListener('change', () => {
         productsGrid.innerHTML = shopInnerHTML;
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     } else if (value == "higher-price") {
         // Order from higher to lower price
         productsShown.sort((a, b) => b.price - a.price);
@@ -260,11 +230,7 @@ orderBy.addEventListener('change', () => {
         productsGrid.innerHTML = shopInnerHTML;
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     } else if (value == "lower-price") {
         // Order from lower to higher price
         productsShown.sort((a, b) => a.price - b.price);
@@ -273,11 +239,7 @@ orderBy.addEventListener('change', () => {
         productsGrid.innerHTML = shopInnerHTML;
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     }
 });
 
@@ -307,38 +269,17 @@ function addEventListenerTypes() {
     const matsButton = document.getElementById('mats');
 
     // Add events listeners
-    if (!!proteinButton) {
-        proteinButton.addEventListener('click', () => filterByType("protein"));
-    }
-    if (!!creatineButton) {
-        creatineButton.addEventListener('click', () => filterByType("creatine"));
-    }
-    if (!!preworkoutButton) {
-        preworkoutButton.addEventListener('click', () => filterByType("preworkout"));
-    }
-    if (!!bcaasButton) {
-        bcaasButton.addEventListener('click', () => filterByType("bcaas"));
-    }
-    if (!!shakersButton) {
-        shakersButton.addEventListener('click', () => filterByType("shaker"));
-    }
+    if (!!proteinButton) proteinButton.addEventListener('click', () => filterByType("protein"));
+    if (!!creatineButton) creatineButton.addEventListener('click', () => filterByType("creatine"));
+    if (!!preworkoutButton) preworkoutButton.addEventListener('click', () => filterByType("preworkout"));
+    if (!!bcaasButton) bcaasButton.addEventListener('click', () => filterByType("bcaas"));
+    if (!!shakersButton) shakersButton.addEventListener('click', () => filterByType("shaker"));
     
-    
-    if (!!machinesButton) {
-        machinesButton.addEventListener('click', () => filterByType("machines"));
-    }
-    if (!!dumbellsButton) {
-        dumbellsButton.addEventListener('click', () => filterByType("dumbells"));
-    }
-    if (!!weightsButton) {
-        weightsButton.addEventListener('click', () => filterByType("weights"));
-    }
-    if (!!barsButton) {
-        barsButton.addEventListener('click', () => filterByType("bars"));
-    }
-    if (!!matsButton) {
-        matsButton.addEventListener('click', () => filterByType("mats"));
-    }
+    if (!!machinesButton) machinesButton.addEventListener('click', () => filterByType("machines"));
+    if (!!dumbellsButton) dumbellsButton.addEventListener('click', () => filterByType("dumbells"));
+    if (!!weightsButton) weightsButton.addEventListener('click', () => filterByType("weights"));
+    if (!!barsButton) barsButton.addEventListener('click', () => filterByType("bars"));
+    if (!!matsButton) matsButton.addEventListener('click', () => filterByType("mats"));
 }
 
 // Function that filters the products by type
@@ -351,11 +292,7 @@ function filterByType(type) {
     productsGrid.innerHTML = productsGridInnerHTML;
 
     let theme = sessionStorage.getItem('theme');
-    if (theme == "bright") {
-        brightMode();
-    } else {
-        darkMode();
-    }
+    (theme == "bright") ? brightMode() : darkMode();
 }
 
 
@@ -372,11 +309,7 @@ function searchInput() {
         productsGrid.innerHTML = productsGridInnerHTML;
     
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     });
 }
 
@@ -396,10 +329,6 @@ function priceFilter() {
         maxPriceSpan.innerText = maxPrice;
 
         let theme = sessionStorage.getItem('theme');
-        if (theme == "bright") {
-            brightMode();
-        } else {
-            darkMode();
-        }
+        (theme == "bright") ? brightMode() : darkMode();
     });
 }

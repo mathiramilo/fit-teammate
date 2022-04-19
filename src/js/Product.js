@@ -1,6 +1,5 @@
 // Import Modules
 import Inventary from "./classes/Inventary.js";
-import ShoppingCart from "./classes/ShoppingCart.js";
 
 import {darkMode, brightMode} from "./app.js";
 
@@ -8,9 +7,7 @@ import {darkMode, brightMode} from "./app.js";
 // Get the Inventary from Session storage
 let inventary = new Inventary([]);
 
-let sessionStorageInventaryString = sessionStorage.getItem('inventary');
-let sessionStorageInventary = JSON.parse(sessionStorageInventaryString);
-inventary['products'] = sessionStorageInventary;
+inventary['products'] = JSON.parse(sessionStorage.getItem('inventary'));
 
 
 // Get the URL parameters

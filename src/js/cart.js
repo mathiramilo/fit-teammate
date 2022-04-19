@@ -9,33 +9,14 @@ import {darkMode, brightMode} from "./app.js";
 
 // The object Inventary contains an array of all the prodcuts
 let inventary = new Inventary([]);
-
 // Verifies if Inventary is in Session Storage
-if (sessionStorage.getItem('inventary')) {
-    // The inventary is stored in Session Storage
-    let sessionStorageInventaryString = sessionStorage.getItem('inventary');
-    let sessionStorageInventary = JSON.parse(sessionStorageInventaryString);
-    inventary['products'] = sessionStorageInventary;
-} else {
-    // Create Inventary
-    let productList = createInventary();
-    inventary['products'] = productList;
-}
+inventary['products'] = JSON.parse(sessionStorage.getItem('inventary')) ?? createInventary();
 
 
 // Get the cart from session storage
 let cart = new ShoppingCart([]);
-
 // Verifies if Cart is in Session Storage
-if (sessionStorage.getItem('cart')) {
-    // The cart is stored in Session Storage
-    let sessionStorageCartString = sessionStorage.getItem('cart');
-    let sessionStorageCart = JSON.parse(sessionStorageCartString);
-    cart['products'] = sessionStorageCart;
-} else {
-    // Set empty cart in session storage
-    sessionStorage.setItem('cart', JSON.stringify(cart.products));
-}
+(sessionStorage.getItem('cart')) ? cart['products'] = JSON.parse(sessionStorage.getItem('cart')) : sessionStorage.setItem('cart', JSON.stringify(cart.products));
 
 
 // Cart Charge Data
@@ -66,9 +47,7 @@ cartButton.addEventListener('click', () => {
 });
 
 const closeCartButton = document.getElementById('close-cart-button');
-closeCartButton.onclick = () => {
-    cartOverlay.style.transform = "translateX(460px)";
-}
+closeCartButton.onclick = () => cartOverlay.style.transform = "translateX(460px)";
 
 
 // Functionality for product card buttons
@@ -173,9 +152,7 @@ function productCardButtons() {
 
             cartUpdateData();
 
-            if (cart.products.length == 0) {
-                cartOverlay.style.transform = "translateX(460px)";
-            }
+            if (cart.products.length == 0) cartOverlay.style.transform = "translateX(460px)";
 
             sessionStorage.setItem('cart', JSON.stringify(cart.products));
         }
@@ -227,9 +204,7 @@ function productCardButtons() {
 
             cartUpdateData();
 
-            if (cart.products.length == 0) {
-                cartOverlay.style.transform = "translateX(460px)";
-            }
+            if (cart.products.length == 0) cartOverlay.style.transform = "translateX(460px)";
 
             sessionStorage.setItem('cart', JSON.stringify(cart.products));
         }

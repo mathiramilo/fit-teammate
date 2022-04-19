@@ -12,21 +12,10 @@ xButton.addEventListener('click', closeMenu);
 // THEMES
 
 // Initialize the variable theme from session storage or as "bright" default
-let theme;
-
-if (sessionStorage.getItem('theme')) {
-    let ssTheme = sessionStorage.getItem('theme');
-    theme = ssTheme;
-} else {
-    theme = "bright";
-}
+let theme = sessionStorage.getItem('theme') || "bright";
 
 // Charge the page with the theme
-if (theme == "bright") {
-    brightMode();
-} else {
-    darkMode();
-}
+(theme == "bright") ? brightMode() : darkMode();
 
 // Get the Dark Mode button
 const darkModeButton = document.querySelector('.dark-mode');

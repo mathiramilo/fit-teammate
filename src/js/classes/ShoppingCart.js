@@ -8,9 +8,7 @@ export default class ShoppingCart {
 
     // Method that adds a Product to the Shopping Cart
     addProduct(product) {
-        if (!this.isProduct(product)) {
-            this.products.push(product);
-        }
+        if (!this.isProduct(product)) this.products.push(product);
         this.getProduct(product.id).cartQuantity++;
     }
 
