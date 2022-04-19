@@ -72,6 +72,9 @@ export default class ShoppingCart {
 
     // Method for checkout
     checkout() {
-
+        for (let prod of this.products) {
+            prod.cartQuantity = 0;
+        }
+        this.products = [];
     }
 }

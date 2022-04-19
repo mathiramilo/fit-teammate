@@ -74,6 +74,27 @@ if (addToCartButton) {
 }
 
 
+// Finish Buying
+const finishBuyingButton = document.getElementById('finish-buying-button');
+finishBuyingButton.onclick = () => {
+    Swal.fire({
+        title: 'PURCHASE COMPLETED',
+        text: 'Thank you for your purchase! We wait for you again any time you want',
+        showConfirmButton: false,
+        timer: 3000,
+        imageUrl: '../../assets/images/icons/check-circle.svg',
+        imageWidth: 100
+    });
+
+    cartOverlay.style.transform = "translateX(460px)";  
+
+    cart.checkout();
+    cartLoadData();
+
+    sessionStorage.setItem('cart', JSON.stringify(cart.products));
+}
+
+
 
 // Function that loads the data in the cart
 function cartLoadData() {
