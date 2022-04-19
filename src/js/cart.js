@@ -77,6 +77,7 @@ if (addToCartButton) {
 // Finish Buying
 const finishBuyingButton = document.getElementById('finish-buying-button');
 finishBuyingButton.onclick = () => {
+    // Sweet Alert
     Swal.fire({
         title: 'PURCHASE COMPLETED',
         text: 'Thank you for your purchase! We wait for you again any time you want',
