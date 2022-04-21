@@ -83,7 +83,7 @@ finishBuyingButton.onclick = () => {
         text: 'Thank you for your purchase! We wait for you again any time you want',
         showConfirmButton: false,
         timer: 3000,
-        imageUrl: '../../assets/images/icons/check-circle.svg',
+        imageUrl: '../assets/images/icons/check-circle.svg',
         imageWidth: 100
     });
 
