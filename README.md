@@ -3,7 +3,7 @@ Fitteamate is a web application dedicated to fitness where the user enters their
 ## Information
 Final Project of Coderhouse JavaScript Course
 * Developed by: Mathias Ramilo
-* Website: https://mathiramilo.github.io/Fitteamate/
+* Website: https://mathiramilo.github.io/fit-teamate/
 ## Tools
 ### Languages
 * HTML5
