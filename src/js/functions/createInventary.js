@@ -7,9 +7,7 @@ import Inventary from "../classes/Inventary.js";
 export default function createInventary() {
     // Create the inventary & store it in Local Storage
     let newInventary = new Inventary([]);
-
-    // Create all the products...
-
+    
     // Use fetch API to fetch the data from the json file "products.json"
     let request = new Request(".././src/js/json/products.json");
 
