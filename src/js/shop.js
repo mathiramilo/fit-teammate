@@ -12,7 +12,6 @@ let inventary = new Inventary([]);
 // Verifies if Inventary is in Session Storage
 inventary['products'] = JSON.parse(sessionStorage.getItem('inventary')) || createInventary();
 
-
 // LOAD THE SHOP
 
 // Get the URL parameters

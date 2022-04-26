@@ -28,7 +28,7 @@ export default function createInventary() {
 
             // Add inventary to Session Storage
             sessionStorage.setItem('inventary', JSON.stringify(newInventary.products));
-            
+
             // Return an array with all the products to be shown in the shop
             return newInventary.products;
         });
