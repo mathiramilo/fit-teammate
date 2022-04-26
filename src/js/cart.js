@@ -2,6 +2,7 @@
 import Inventary from "./classes/Inventary.js";
 import ShoppingCart from "./classes/ShoppingCart.js";
 
+import createInventary from "./functions/createInventary.js";
 import cartProducts from "./functions/cartProducts.js";
 
 import {darkMode, brightMode} from "./app.js";

@@ -1,0 +1,397 @@
+[
+    {
+        "id": 1, 
+        "name": "Chest Bench", 
+        "price": 145, 
+        "type": "machines", 
+        "description": "Multifunctional bench that allows various levels of training, It has 3 different inclinations, inclined and reclines planes. Ideal for strengthening chest, legs, shoulders and arms.", 
+        "dimensions": "170cm x 107cm x 66.5cm", 
+        "img": "machine-chest", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 2, 
+        "name": "Running Machine", 
+        "price": 750, 
+        "type": "machines", 
+        "description": "A last generation running machine that counts with 16 velocities, a 30 degrees adjustable inclination between a lot of other functionalities and modes.", 
+        "dimensions": "170cm x 72cm x 125cm", 
+        "img": "machine-run", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 3, 
+        "name": "Stationary Bike", 
+        "price": 379, 
+        "type": "machines", 
+        "description": "A last generation stationary bike for legs strengthening, cardio training, physiotherapy, etc. It has a wide adjustment field and a very comfortable seat.", 
+        "dimensions": "96cm x 48cm x 122cm", 
+        "img": "machine-bike", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 4, 
+        "name": "Dumbells 2kg", 
+        "price": 38, 
+        "type": "dumbells", 
+        "description": "2kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 5, 
+        "name": "Dumbells 4kg", 
+        "price": 40, 
+        "type": "dumbells", 
+        "description": "4kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 6, 
+        "name": "Dumbells 6kg", 
+        "price": 42, 
+        "type": "dumbells", 
+        "description": "6kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 7, 
+        "name": "Dumbells 8kg", 
+        "price": 44, 
+        "type": "dumbells", 
+        "description": "8kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 8, 
+        "name": "Dumbells 10kg", 
+        "price": 46, 
+        "type": "dumbells", 
+        "description": "10kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 9, 
+        "name": "Dumbells 12kg", 
+        "price": 48, 
+        "type": "dumbells", 
+        "description": "12kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 10, 
+        "name": "Dumbells 14kg", 
+        "price": 50, 
+        "type": "dumbells", 
+        "description": "14kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 11, 
+        "name": "Dumbells 16kg", 
+        "price": 52, 
+        "type": "dumbells", 
+        "description": "16kg hexagonal dumbells made with iron and PVC coated.", 
+        "dimensions": "69cm x 10cm x 9cm", 
+        "img": "dumbells-10", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 12, 
+        "name": "Weight 2kg", 
+        "price": 20, 
+        "type": "weights", 
+        "description": "2kg compact cast iron weight.", 
+        "dimensions": "12cm x 12cm x 3cm", 
+        "img": "weight-10kg", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 13, 
+        "name": "Weight 3kg", 
+        "price": 21, 
+        "type": "weights", 
+        "description": "3kg compact cast iron weight.", 
+        "dimensions": "15cm x 15cm x 3cm", 
+        "img": "weight-10kg", 
+        "cartQuantity": 0
+    },
+    
+    {
+        "id": 14, 
+        "name": "Weight 5kg", 
+        "price": 24, 
+        "type": "weights", 
+        "description": "5kg compact cast iron weight.", 
+        "dimensions": "18cm x 18cm x 3cm", 
+        "img": "weight-10kg", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 15, 
+        "name": "Weight 10kg", 
+        "price": 28, 
+        "type": "weights", 
+        "description": "10kg compact cast iron weight.", 
+        "dimensions": "25cm x 25cm x 3cm", 
+        "img": "weight-10kg", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 16, 
+        "name": "Weight 20kg", 
+        "price": 32, 
+        "type": "weights", 
+        "description": "20kg compact cast iron weight.", 
+        "dimensions": "28cm x 28cm x 3cm", 
+        "img": "weight-10kg", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 17, 
+        "name": "Olympic Bar", 
+        "price": 90, 
+        "type": "bars", 
+        "description": "20kg profesional olympic bar made of stainless steel. Supports a maximum weight of 250kg.", 
+        "dimensions": "220cm x 3cm x 3cm", 
+        "img": "bars-olympic", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 18, 
+        "name": "Roman Bar", 
+        "price": 58, 
+        "type": "bars", 
+        "description": "4kg roman bar made of stainless steel. Supports a maximum weight of 80kg.", 
+        "dimensions": "60cm x 12cm x 3cm", 
+        "img": "bars-roman", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 19, 
+        "name": "W Bar", 
+        "price": 75, 
+        "type": "bars", 
+        "description": "8kg w bar made of stainless steel. Supports a maximum weight of 120kg.", 
+        "dimensions": "120cm x 8cm x 3cm", 
+        "img": "bars-w", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 20, 
+        "name": "Fitness Mat", 
+        "price": 20, 
+        "type": "mats", 
+        "description": "A soft and comfortable fitness mat for every kinds of exercises.", 
+        "dimensions": "200cm x 80cm x 3cm", 
+        "img": "mats", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 21, 
+        "name": "Whey Protein 200g", 
+        "price": 35, 
+        "type": "protein", 
+        "description": "200g protein supplement made exclusively with Whey Protein Concentrate, a protein of very high biological value from ultrafiltered whey.", 
+        "dimensions": "8cm x 8cm x 12cm", 
+        "img": "protein200", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 22, 
+        "name": "Whey Protein 500g", 
+        "price": 48, 
+        "type": "protein", 
+        "description": "500g protein supplement made exclusively with Whey Protein Concentrate, a protein of very high biological value from ultrafiltered whey.", 
+        "dimensions": "10cm x 10cm x 14cm", 
+        "img": "protein500", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 23, 
+        "name": "Whey Protein 1kg", 
+        "price": 54, 
+        "type": "protein", 
+        "description": "1kg protein supplement made exclusively with Whey Protein Concentrate, a protein of very high biological value from ultrafiltered whey.", 
+        "dimensions": "10cm x 10cm x 15cm", 
+        "img": "protein1000", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 24, 
+        "name": "Whey Protein 2kg", 
+        "price": 78, 
+        "type": "protein", 
+        "description": "2kg protein supplement made exclusively with Whey Protein Concentrate, a protein of very high biological value from ultrafiltered whey.", 
+        "dimensions": "12cm x 12cm x 16cm", 
+        "img": "protein2000", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 25, 
+        "name": "Creatine 200g", 
+        "price": 32, 
+        "type": "creatine", 
+        "description": "200g creatine that helps increase strength, energy and physical endurance, with a high content of purity and 100% imported raw material. creatine was developed for athletes seeking extreme performance, contributing to muscle development and ensuring expressive results.", 
+        "dimensions": "8cm x 8cm x 12cm", 
+        "img": "creatine200", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 26, 
+        "name": "Creatine 300g", 
+        "price": 38, 
+        "type": "creatine", 
+        "description": "300g creatine that helps increase strength, energy and physical endurance, with a high content of purity and 100% imported raw material. creatine was developed for athletes seeking extreme performance, contributing to muscle development and ensuring expressive results.", 
+        "dimensions": "10cm x 10cm x 12cm", 
+        "img": "creatine300", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 27, 
+        "name": "Creatine 500g", 
+        "price": 42, 
+        "type": "creatine", 
+        "description": "500g creatine that helps increase strength, energy and physical endurance, with a high content of purity and 100% imported raw material. creatine was developed for athletes seeking extreme performance, contributing to muscle development and ensuring expressive results.", 
+        "dimensions": "10cm x 10cm x 15cm", 
+        "img": "creatine500", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 28, 
+        "name": "Pre-Workout 200g", 
+        "price": 42, 
+        "type": "preworkout", 
+        "description": "200g pre-workout supplement, it contains Citrulline, Taurine, Alanine, BCAA's, Guarana, Vitamin B Complex and essential minerals, all in the right proportion to achieve high intensity training.", 
+        "dimensions": "8cm x 8cm x 12cm", 
+        "img": "preworkout200", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 29, 
+        "name": "Pre-Workout 300g", 
+        "price": 52, 
+        "type": "preworkout", 
+        "description": "300g pre-workout supplement, it contains Citrulline, Taurine, Alanine, BCAA's, Guarana, Vitamin B Complex and essential minerals, all in the right proportion to achieve high intensity training.", 
+        "dimensions": "10cm x 10cm x 12cm", 
+        "img": "preworkout300", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 30, 
+        "name": "Pre-Workout 500g", 
+        "price": 78, 
+        "type": "preworkout", 
+        "description": "500g pre-workout supplement, it contains Citrulline, Taurine, Alanine, BCAA's, Guarana, Vitamin B Complex and essential minerals, all in the right proportion to achieve high intensity training.", 
+        "dimensions": "10cm x 10cm x 15cm", 
+        "img": "preworkout500", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 31, 
+        "name": "BCAAs 200g", 
+        "price": 38, 
+        "type": "bcaas", 
+        "description": "200g BCAAs, or branched-chain amino acids, are a group of amino acids made up of Leucine, Valine and Isoleucine, which play key roles in preventing muscle damage, recovery and increased lean muscle mass.", 
+        "dimensions": "8cm x 8cm x 12cm", 
+        "img": "bcaas200", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 32, 
+        "name": "BCAAs 300g", 
+        "price": 48, 
+        "type": "bcaas", 
+        "description": "300g BCAAs, or branched-chain amino acids, are a group of amino acids made up of Leucine, Valine and Isoleucine, which play key roles in preventing muscle damage, recovery and increased lean muscle mass.", 
+        "img": "bcaas300", 
+        "dimensions": "10cm x 10cm x 12cm", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 33, 
+        "name": "BCAAs 500g", 
+        "price": 68, 
+        "type": "bcaas", 
+        "description": "500g BCAAs, or branched-chain amino acids, are a group of amino acids made up of Leucine, Valine and Isoleucine, which play key roles in preventing muscle damage, recovery and increased lean muscle mass.", 
+        "img": "bcaas500", 
+        "dimensions": "10cm x 10cm x 15cm", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 34, 
+        "name": "Standard Shaker", 
+        "price": 18, 
+        "type": "shaker", 
+        "description": "Standard shaker, perfect for mixing our supplements and take them.", 
+        "img": "shaker-standard", 
+        "dimensions": "5cm x 5cm x 12cm", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 35, 
+        "name": "Platinum Shaker", 
+        "price": 28, 
+        "type": "shaker", 
+        "description": "Platinum shaker, perfect for mixing our supplements and take them.", 
+        "img": "shaker-platinum", 
+        "dimensions": "5cm x 5cm x 12cm", 
+        "cartQuantity": 0
+    },
+
+    {
+        "id": 36, 
+        "name": "Universal Shaker", 
+        "price": 34, 
+        "type": "shaker", 
+        "description": "Universal shaker, perfect for mixing our supplements and take them.", 
+        "img": "shaker-universal", 
+        "dimensions": "6cm x 6cm x 12cm", 
+        "cartQuantity": 0
+    }
+]
