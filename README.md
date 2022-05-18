@@ -18,3 +18,4 @@ Final Project of Coderhouse JavaScript Course
 *
 ## Contact
 * GitHub: https://github.com/mathiramilo
+* Linkedin: https://www.linkedin.com/in/mathias-ramilo/
