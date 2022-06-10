@@ -78,14 +78,15 @@ if (addToCartButton) {
 // Finish Buying
 const finishBuyingButton = document.getElementById('finish-buying-button');
 finishBuyingButton.onclick = () => {
-    // Sweet Alert
+    // Sweet Alert (Close desactivated)
     Swal.fire({
         title: 'PURCHASE COMPLETED',
         text: 'Thank you for your purchase! We wait for you again any time you want',
         showConfirmButton: false,
         timer: 3000,
         imageUrl: '../assets/images/icons/check-circle.svg',
-        imageWidth: 100
+        imageWidth: 100,
+        allowOutsideClick: false
     });
 
     cartOverlay.style.transform = "translateX(460px)";  
@@ -94,6 +95,9 @@ finishBuyingButton.onclick = () => {
     cartLoadData();
 
     sessionStorage.setItem('cart', JSON.stringify(cart.products));
+
+    // Redirects the user to home after the sweet alert modal closes
+    setTimeout(() => location.replace("../../index.html"), 3200);
 }
 
 
