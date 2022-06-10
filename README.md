@@ -1,4 +1,4 @@
-<div style="margin-bottom: 1em">
+<div style="margin-bottom: 2em">
     <img src="assets/images/logo/logo.svg" alt="Logo FitTeammate" width="150px" />
 </div>
 
