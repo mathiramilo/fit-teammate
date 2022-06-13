@@ -97,7 +97,7 @@ finishBuyingButton.onclick = () => {
     sessionStorage.setItem('cart', JSON.stringify(cart.products));
 
     // Redirects the user to home after the sweet alert modal closes
-    setTimeout(() => location.replace("../../index.html"), 3200);
+    setTimeout(() => location.replace("../index.html"), 3200);
 }
 
 
