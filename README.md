@@ -26,9 +26,115 @@ Global Design
 
 # Technical Information
 
-## Framework
+### `1. Vanilla JavaScript`
 
-* **`No Framework`**
+Web Application developed with vanilla JavaScript, no framework was used.
+
+### `2. OOP Approach`
+
+Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and behavior.
+
+```js
+/* The following class is an abstraction of a Shopping Cart */
+export default class ShoppingCart {
+  constructor(products) {
+    this.products = products;
+  }
+
+  addProduct(product) {
+    if (!this.isProduct(product)) this.products.push(product);
+    this.getProduct(product.id).cartQuantity++;
+  }
+
+  removeProduct(product) {
+    this.getProduct(product.id).cartQuantity = 0;
+
+    let productIndex = this.products.indexOf(product);
+    this.products.splice(productIndex, 1);
+  }
+
+  isProduct(product) {
+    let mapped = this.products.map(element => element.id);
+    return mapped.includes(product.id);
+  }
+
+  getProduct(id) {
+    return this.products.find(element => element.id == id);
+  }
+
+  productsAmount() {
+    let amount = 0;
+    for (let prod of this.products) {
+      amount += prod.cartQuantity;
+    }
+    return amount;
+  }
+
+  subtotal() {
+    let subtotal = 0;
+    for (let prod of this.products) {
+      subtotal += prod.price * prod.cartQuantity;
+    }
+    return subtotal;
+  }
+
+  calculateVAT() {
+    let subtotal = this.subtotal();
+    let vat = parseFloat((subtotal * 0.12).toFixed(2));
+    return vat;
+  }
+
+  shipping() {
+    if (this.subtotal() > 1000) {
+      return 0;
+    } else {
+      return 50;
+    }
+  }
+
+  total() {
+    return (this.subtotal() + this.calculateVAT() + this.shipping()).toFixed(2);
+  }
+
+  checkout() {
+    for (let prod of this.products) {
+      prod.cartQuantity = 0;
+    }
+    this.products = [];
+  }
+}
+```
+
+### `3. Modular Architecture`
+
+Application composed of loosely coupled, functional units, these units are linked to work together to form the hole application. This helps to understand and mantain the software.
+
+```js
+/* Function that fetches the products from a json file and creates the inventary */
+import Product from '../classes/Product.js'
+import Inventary from '../classes/Inventary.js'
+
+export default function createInventary() {
+  let newInventary = new Inventary([])
+  
+  let request = new Request('.././src/js/json/products.json')
+
+  fetch(request)
+    .then(response => response.json())
+    .then(data => {
+      for (let item of data) {
+        let {id, name, price, type, description, dimensions, img, cartQuantity} = item
+
+        const product = new Product(id, name, price, type, description, dimensions, img, cartQuantity)
+        newInventary.addProduct(product)
+      }
+
+      sessionStorage.setItem('inventary', JSON.stringify(newInventary.products))
+      return newInventary.products
+    })
+    .catch(err => console.log(err))
+}
+```
 
 ## Languages
 
