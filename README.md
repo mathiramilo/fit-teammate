@@ -123,7 +123,7 @@ export default function createInventary() {
     .then(response => response.json())
     .then(data => {
       for (let item of data) {
-        let {id, name, price, type, description, dimensions, img, cartQuantity} = item
+        let { id, name, price, type, description, dimensions, img, cartQuantity } = item
 
         const product = new Product(id, name, price, type, description, dimensions, img, cartQuantity)
         newInventary.addProduct(product)
