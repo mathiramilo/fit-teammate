@@ -2,7 +2,7 @@
     <img src="assets/images/logo/logo.svg" alt="Logo FitTeammate" width="150px" />
 </div>
 
-**Fitteamate** is a web application developed with vanilla JavaScript dedicated to fitness where the user enters their data and calculates their BMI (Body Mass Index), gives advice or tips on diet and exercise and also builds a personalized routine for you. On the other hand, it has an Ecommerce where you can find a wide variety of products for fitness. You can visit the [**Website**](https://mathiramilo.github.io/Fit-Teammate) and see it for yourself.
+**Fitteamate** is a web application developed with vanilla JavaScript dedicated to fitness where the user enters their data and calculates their BMI (Body Mass Index), gives advice or tips on diet and exercise and also builds a personalized routine for you. On the other hand, it has an Ecommerce where you can find a wide variety of products for fitness. You can visit the [**Website**](https://mathiramilo.github.io/FitTeammate) and see it for yourself.
 
 # Features
 
